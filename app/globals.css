@@ -1,26 +1,31 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-  }
+    --btn-bg: rgba(255, 255, 255, 0.02);
+    --btn-border: rgba(255, 255, 255, 0.3);
+
+    /* Inner shadow */
+    --btn-inner-shadow: inset 1px 2px 7px rgba(255, 255, 255, 0.18);
+    --badge-inner-shadow : inset 1px 1px 5px rgba(255 , 255, 255 , 0.18)
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-geist-sans);
+    background-color: var(--background);
+    color: var(--foreground);
 }
+
+.btn-surface {
+  background: var(--btn-bg);
+  border: 1px solid var(--btn-border);
+  box-shadow: var(--btn-inner-shadow);
+}
+
+.font-hanken {
+  font-family: var(--font-hanken), system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+
