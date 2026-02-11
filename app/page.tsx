@@ -11,9 +11,6 @@ export default function Home(){
      <Experience/>
      <Projects/>
      <Stack/>
-     <div>
-       Hello there uncle
-     </div>
    </Container>
   )
 }

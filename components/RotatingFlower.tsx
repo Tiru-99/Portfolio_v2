@@ -1,41 +1,23 @@
-"use client"
+import Image from "next/image";
 
-import Image from "next/image"
-import { motion, useScroll, useTransform, useSpring } from "framer-motion"
-import { useRef } from "react"
-
-export default function RotatingFlower() {
-  const ref = useRef<HTMLDivElement>(null)
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  })
-
-  // Lightly smooth scroll progress
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 200,
-    damping: 30,
-    mass: 0.5,
-  })
-
-  // Controlled, calm rotation
-  const rotate = useTransform(smoothProgress, [0, 1], [0, 180])
-
+export default function FlowerSection() {
   return (
-    <div ref={ref} className="absolute inset-0 flex items-center justify-center">
-      <motion.div
-        style={{ rotate }}
-        className="w-64 h-64 md:w-80 md:h-100 will-change-transform"
+    <div className="relative w-[300px] h-[300px] overflow-hidden">
+      {/* 🌸 Flower */}
+      <Image
+        src="/assets/metallic-flower.png"
+        alt="Metallic Flower"
+        fill
+        className="object-contain translate-y-[40%]"
+        priority
+      />
+
+      {/* 🌫 Bottom 30% Overlay */}
+      <div className="absolute z-10 bottom-0 left-0 right-0 h-[100%] bg-gradient-to-t from-black/95 via-black/30 to-transparent" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 text-[13px] text-neutral-400 font-hanken tracking-wider"
       >
-        <Image
-          src="/assets/metallic-flower.png"
-          alt="Metallic Flower"
-          fill
-          className="object-contain"
-          priority
-        />
-      </motion.div>
+        MYSKILLS
+      </div>
     </div>
-  )
+  );
 }

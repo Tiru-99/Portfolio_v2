@@ -29,7 +29,7 @@ const techIcons = [
 
 export default function TechIcons() {
   return (
-    <div className="flex justify-center max-w-xl mt-8">
+    <div className="flex justify-center max-w-xl mt-4">
       <div className="flex flex-wrap justify-center gap-2 max-w-full">
         {techIcons.map((src) => (
           <div
