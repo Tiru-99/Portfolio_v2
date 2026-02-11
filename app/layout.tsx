@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist , Hanken_Grotesk} from "next/font/google";
+import { Geist , Hanken_Grotesk , Instrument_Serif} from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,6 +13,13 @@ const hankenGrotesk = Hanken_Grotesk({
   weight: ["300", "400", "500", "600", "700"],
   display: "swap",
   variable: "--font-hanken",
+});
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ['latin'],
+  display: 'swap', 
+  weight: ['400'], 
+  variable: '--font-instrument-serif', 
 });
 
 
@@ -29,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${hankenGrotesk.variable} antialiased`}
+        className={`${geistSans.variable} ${hankenGrotesk.variable} ${instrumentSerif.variable} antialiased`}
       >
         {children}
       </body>

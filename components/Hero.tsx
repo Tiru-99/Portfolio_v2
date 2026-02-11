@@ -14,33 +14,23 @@ import {
 
 export default function Hero() {
   return (
-    <section className="max-w-3xl mx-auto px-4 pb-12">
+      <div className="px-4">
       {/* Banner */}
-      <div
-        className="
-          relative
-          w-full
-          aspect-[16/9]
-          max-h-[18rem]
-          rounded-2xl
-          overflow-hidden
-          shadow-2xl
-        "
-      >
+      <div className="relative w-full aspect-[16/9] max-h-[18rem] rounded-sm overflow-hidden shadow-2xl bg-black">
         <Image
-          src="/assets/banner16.jpeg"
+          src="/assets/banner23.gif"
           alt="Banner"
           fill
           className="object-cover"
           quality={100}
           priority
-          unoptimized={false}
         />
         <div className="absolute inset-0 bg-linear-to-b from-black/20 via-black/30 to-black/60" />
       </div>
 
+
       {/* Profile + content */}
-      <div className="relative flex flex-col items-begin -mt-8 md:-mt-16 px-4">
+      <div className="relative flex flex-col items-center -mt-8 md:-mt-16 px-4">
         {/* Profile Image */}
         <div className="relative md:w-32 md:h-32 h-28 w-28 rounded-full overflow-hidden ring-4 ring-black shadow-xl">
           <Image
@@ -53,8 +43,8 @@ export default function Hero() {
         </div>
 
         {/* Text */}
-        <h1 className="mt-5 text-3xl md:text-5xl font-bold tracking-tight text-white">
-          Hi — I'm Aayush Tirmanwar
+        <h1 className="mt-5 text-3xl md:text-4xl font-bold tracking-tight text-white">
+          Hi — I'm <span className="font-instrument italic tracking-normal font-bold">Aayush Tirmanwar</span>
         </h1>
         <p className="mt-1 font-hanken text-base text-white/70 font-medium">
           21 · Builder · Engineer
@@ -124,14 +114,14 @@ export default function Hero() {
 
         </div>
       </div>
-      <div className="flex px-4 gap-4 mt-6 font-hanken">
+      <div className="flex justify-center px-4 gap-4 mt-6 font-hanken">
         <button
           className="
             btn-surface btn-primary
             px-4 py-2 rounded-md
             text-white font-semibold
             transition duration-300 ease-in-out
-            hover:!bg-white/3 hover:cursor-pointer
+            hover:bg-white/3! hover:cursor-pointer
             inline-flex items-center gap-2
           "
         >
@@ -153,7 +143,7 @@ export default function Hero() {
           <span>Get in touch</span>
         </button>
       </div>
-    </section>
+    </div>
   );
 }
 
