@@ -1,12 +1,12 @@
 "use client";
-
-import Image from "next/image";
+import { useRef } from "react";
 import TechIcons from "./TechIcons";
 import FlowerSection from "./RotatingFlower";
 export default function Stack() {
+  const sectionRef = useRef<HTMLDivElement | null>(null);
   return (
-    <section className="flex flex-col -mt-16 items-center justify-center overflow-hidden">
-      <FlowerSection/>
+    <section ref={sectionRef} className="flex flex-col -mt-16 items-center justify-center overflow-hidden">
+      <FlowerSection />
       <div className="flex flex-col justify-center items-center">
         <h2 className="text-2xl md:text-5xl font-instrument text-white">
           The Secret{" "}
@@ -15,7 +15,7 @@ export default function Stack() {
           </span>
         </h2>
 
-        <TechIcons />
+        <TechIcons scrollTarget={sectionRef} />
       </div>
     </section>
   );

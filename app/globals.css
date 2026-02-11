@@ -1,20 +1,24 @@
 @import "tailwindcss";
 
-:root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --btn-bg: rgba(255, 255, 255, 0.02);
-    --btn-border: rgba(255, 255, 255, 0.3);
+html {
+  scroll-behavior: smooth;
+}
 
-    /* Inner shadow */
-    --btn-inner-shadow: inset 1px 2px 7px rgba(255, 255, 255, 0.18);
-    --badge-inner-shadow : inset 1px 1px 5px rgba(255 , 255, 255 , 0.18)
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --btn-bg: rgba(255, 255, 255, 0.02);
+  --btn-border: rgba(255, 255, 255, 0.3);
+
+  /* Inner shadow */
+  --btn-inner-shadow: inset 1px 2px 7px rgba(255, 255, 255, 0.18);
+  --badge-inner-shadow: inset 1px 1px 5px rgba(255, 255, 255, 0.18)
 }
 
 body {
-    font-family: var(--font-geist-sans);
-    background-color: var(--background);
-    color: var(--foreground);
+  font-family: var(--font-geist-sans);
+  background-color: var(--background);
+  color: var(--foreground);
 }
 
 .btn-surface {
@@ -29,7 +33,7 @@ body {
 }
 
 .font-instrument {
-    font-family: var(--font-instrument-serif) , system-ui , -apple-system,
+  font-family: var(--font-instrument-serif), system-ui, -apple-system,
     BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
@@ -37,9 +41,11 @@ body {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -50,3 +56,20 @@ body {
   animation: gradient-move 6s ease infinite;
 }
 
+@keyframes twinkle {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.animate-twinkle {
+  animation-name: twinkle;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}

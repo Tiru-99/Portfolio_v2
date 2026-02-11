@@ -3,7 +3,7 @@ import TechTag from "./TechBadge";
 
 export default function Experience() {
   return (
-    <div className="mt-20">
+    <section id="work" className="mt-20 scroll-mt-24">
       <div className=" text-center pb-8 border-b  border-white/20">
         <p className="text-white/50 text-xs">THE EXPERIENCE</p>
         <div className="text-4xl font-instrument">
@@ -11,10 +11,10 @@ export default function Experience() {
           <div>
             brings
             <span className="italic p-1
-               bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500
+               bg-linear-to-r from-pink-500 via-purple-500 to-blue-500
                bg-clip-text text-transparent animate-gradient">
-               Ideas to Life
-             </span>
+              Ideas to Life
+            </span>
           </div>
         </div>
 
@@ -59,17 +59,17 @@ export default function Experience() {
               Built and shipped <span className="text-white">end-to-end full-stack features</span> that were used across
               <span className="text-white"> core platform flows</span>, impacting real users in production.
             </li>
-          
+
             <li>
               Designed and architected <span className="text-white">critical backend services</span> with a strong focus on
               <span className="text-white"> scalability, reliability, and maintainability</span>.
             </li>
-          
+
             <li>
               Implemented <span className="text-white">Redis-based caching strategies</span> to
               <span className="text-white"> significantly reduce API latency</span> and improve overall system performance.
             </li>
-          
+
             <li>
               Collaborated closely with <span className="text-white">product managers and engineers</span> in a
               <span className="text-white">fast-moving startup environment</span>, contributing to rapid feature iteration.
@@ -77,7 +77,7 @@ export default function Experience() {
           </ul>
 
           {/*Badges*/}
-        
+
           <div className="flex flex-wrap gap-2 mt-3">
             <TechTag name="React" logo="/assets/tech/React.svg" />
             <TechTag name="Next.js" logo="/assets/tech/nextjs.png" />
@@ -91,12 +91,12 @@ export default function Experience() {
             <TechTag name="Github" logo="/assets/tech/GitHub.svg" />
             <TechTag name="Appwrite" logo="/assets/tech/Appwrite.svg" />
           </div>
-          
-          
+
+
 
 
         </div>
       </div>
-    </div>
+    </section>
   );
 }

@@ -2,21 +2,12 @@ import Image from "next/image";
 import Socials from "./Socials";
 import { TbFileCv } from "react-icons/tb";
 import { BiPaperPlane } from "react-icons/bi";
-import {
-  SiTypescript,
-  SiReact,
-  SiNextdotjs,
-  SiBun,
-  SiCplusplus, 
-  SiAmazon , 
-  SiPostgresql,
-} from "react-icons/si";
 
 export default function Hero() {
   return (
-      <div className="px-4">
+    <div id="home" className="px-4">
       {/* Banner */}
-      <div className="relative w-full aspect-[16/9] max-h-[18rem] rounded-sm overflow-hidden shadow-2xl bg-black">
+      <div className="relative w-full aspect-video max-h-72 rounded-sm overflow-hidden shadow-2xl bg-black">
         <Image
           src="/assets/banner23.gif"
           alt="Banner"
@@ -153,7 +144,7 @@ function TechPill({ label, icon }: { label: string; icon: React.ReactNode }) {
   return (
     <span
       className="
-        inline-flex items-center gap-1.5 shadow-[var(--badge-inner-shadow)]
+        inline-flex items-center gap-1.5 shadow-(--badge-inner-shadow)
         px-2 py-1 mx-1
         rounded-md
         bg-white/12

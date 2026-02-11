@@ -1,21 +1,41 @@
+"use client";
+
 import Image from "next/image";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { useRef } from "react";
+
+const MotionImage = motion(Image);
 
 export default function FlowerSection() {
+  const ref = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
+  const rotate = useTransform(scrollYProgress, [0, 1], [0, 180]);
+
+  const smoothRotate = useSpring(rotate, {
+    stiffness: 60,
+    damping: 15,
+    mass: 0.5,
+  });
+
   return (
-    <div className="relative w-[300px] h-[300px] overflow-hidden">
-      {/* 🌸 Flower */}
-      <Image
+    <div ref={ref} className="relative w-[300px] h-[300px] overflow-hidden">
+      <MotionImage
         src="/assets/metallic-flower.png"
         alt="Metallic Flower"
         fill
-        className="object-contain translate-y-[40%]"
         priority
+        style={{ rotate: smoothRotate }}
+        className="object-contain translate-y-[40%] origin-center"
       />
 
-      {/* 🌫 Bottom 30% Overlay */}
-      <div className="absolute z-10 bottom-0 left-0 right-0 h-[100%] bg-gradient-to-t from-black/95 via-black/30 to-transparent" />
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 text-[13px] text-neutral-400 font-hanken tracking-wider"
-      >
+      <div className="absolute z-10 bottom-0 left-0 right-0 h-full bg-gradient-to-t from-[#0a0a0a]/95 via-[#0a0a0a]/30 to-transparent" />
+
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 text-[13px] text-neutral-400 font-hanken tracking-wider">
         MYSKILLS
       </div>
     </div>

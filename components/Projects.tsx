@@ -1,44 +1,44 @@
 import ProjectCard from "./ProjectCard"
-export default function Projects(){
-  return(
+export default function Projects() {
+  return (
     <>
-      <div className="mx-auto mt-12 font-hanken">
+      <div id="projects" className="mx-auto mt-12 font-hanken scroll-mt-24">
         <div className="text-center">
           <p className="text-xs font-hanken text-white/50">FEATURED</p>
           <h1 className="text-center text-4xl text-white font-instrument">Projects</h1>
         </div>
-        
+
         <div className="max-w-3xl mx-auto mt-4 p-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 place-items-center">
             <ProjectCard
               title="Tutorr"
               description="A comprehensive study platform with notes, flashcards, quizzes, AI chatbot, and interactive learning tools."
               image="/assets/profile.jpeg"
-              isLive = {true}
+              isLive={true}
             />
             <ProjectCard
               title="Minderr"
               description="A comprehensive study platform with notes, flashcards, quizzes, AI chatbot, and interactive learning tools."
               image="/assets/profile.jpeg"
-              isLive = {true}
+              isLive={true}
             />
             <ProjectCard
               title="Tawk"
               description="A comprehensive study platform with notes, flashcards, quizzes, AI chatbot, and interactive learning tools."
               image="/assets/profile.jpeg"
-              isLive = {true}
+              isLive={true}
             />
             <ProjectCard
               title="Feedsage"
               description="A comprehensive study platform with notes, flashcards, quizzes, AI chatbot, and interactive learning tools."
               image="/assets/profile.jpeg"
-              isLive = {false}
+              isLive={false}
             />
           </div>
-          
+
           <button
             className="
-              group block mt-6 mx-auto
+              group mt-6 mx-auto
               flex items-center gap-2
               text-xs font-medium
               text-neutral-300
@@ -47,7 +47,7 @@ export default function Projects(){
             "
           >
             <span>See all projects</span>
-          
+
             <span
               className="
                 inline-flex items-center justify-center
