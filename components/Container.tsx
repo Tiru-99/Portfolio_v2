@@ -1,14 +1,15 @@
 'use client'
 
 import DiagonalPattern from "./DiagonalPattern"; // adjust path as needed
-
+import { cn } from "@/lib/utils";
 type ContainerProps = {
   children: React.ReactNode;
+  className?:string 
 };
 
-export default function Container({ children }: ContainerProps) {
+export default function Container({ children , className }: ContainerProps) {
   return (
-    <div className="relative max-w-5xl mx-auto">
+    <div className={cn("relative mx-auto" , className)}>
       {/* Left diagonal pattern - positioned outside left border */}
       <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-16 -translate-x-full overflow-hidden">
         <DiagonalPattern side="left" />

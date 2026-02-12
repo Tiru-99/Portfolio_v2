@@ -25,7 +25,7 @@ export default function Home() {
       });
   }, []);
   return (
-    <Container>
+    <Container className="max-w-5xl">
       <OnekoCat/>
       <Navbar />
       <Hero />

@@ -2,20 +2,18 @@
 
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Minimize2, Maximize2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 export default function Navbar() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isMinimized, setIsMinimized] = useState(false);
   const [active, setActive] = useState("home");
 
   useEffect(() => {
     const sections = ["home", "work", "projects", "blog", "contact"];
 
     const handleScroll = () => {
-      // Show navbar after hero
-      setIsVisible(window.scrollY > window.innerHeight * 0.8);
-
       // Detect active section
       for (const section of sections) {
         const el = document.getElementById(section);
@@ -42,30 +40,44 @@ export default function Navbar() {
     );
 
   return (
-    <AnimatePresence>
-      {isVisible && (
-        <motion.div
-          initial={{ y: -100, x: "-50%", opacity: 0 }}
-          animate={{ y: 0, x: "-50%", opacity: 1 }}
-          exit={{ y: -100, x: "-50%", opacity: 0 }}
-          transition={{ duration: 0.3, type: "spring", stiffness: 260, damping: 20 }}
-          className="fixed top-6 left-1/2 z-50"
-        >
-          <nav className="flex items-center gap-1 p-2 pl-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl ring-1 ring-white/5">
-            
+    <motion.div
+      initial={{ y: -100, x: "-50%", opacity: 0 }}
+      animate={{ y: 0, x: "-50%", opacity: 1 }}
+      transition={{ duration: 0.3, type: "spring", stiffness: 260, damping: 20 }}
+      className="fixed top-6 left-1/2 z-50"
+    >
+      <AnimatePresence mode="wait">
+        {isMinimized ? (
+          <motion.button
+            key="minimized"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.8, opacity: 0 }}
+            onClick={() => setIsMinimized(false)}
+            className="p-3 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl ring-1 ring-white/5 hover:bg-white/10 transition-colors"
+          >
+            <Maximize2 size={16} className="text-white" />
+          </motion.button>
+        ) : (
+          <motion.nav
+            key="expanded"
+            initial={{ scale: 0.95, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.95, opacity: 0 }}
+            className="flex items-center gap-1 p-2 pl-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl ring-1 ring-white/5"
+          >
             <div className="flex items-center gap-1">
-              
-              <a href="#home" className={linkStyle("home")}>
+              <Link href="/" className={linkStyle("home")}>
                 Home
-              </a>
+              </Link>
 
-              <a href="#work" className={linkStyle("experience")}>
+              <a href="/#work" className={linkStyle("experience")}>
                 Work
               </a>
 
-              <a href="#projects" className={linkStyle("projects")}>
+              <Link href="/projects" className={linkStyle("projects")}>
                 Projects
-              </a>
+              </Link>
 
               <a href="/blogs" className={linkStyle("blog")}>
                 Blog
@@ -80,18 +92,25 @@ export default function Navbar() {
               </button>
             </div>
 
-            <div className="pl-2 pr-1">
+            <div className="pl-2 pr-1 flex items-center gap-2">
               <a
-                href="#contact"
+                href="/#contact"
                 className="px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-medium transition-all border border-white/5 hover:border-white/10 shadow-lg"
               >
                 Book a Call
               </a>
-            </div>
 
-          </nav>
-        </motion.div>
-      )}
-    </AnimatePresence>
+              <button
+                onClick={() => setIsMinimized(true)}
+                className="p-2 rounded-full text-gray-400 hover:text-white hover:bg-white/10 transition-colors"
+                title="Minimize navbar"
+              >
+                <Minimize2 size={14} />
+              </button>
+            </div>
+          </motion.nav>
+        )}
+      </AnimatePresence>
+    </motion.div>
   );
 }
