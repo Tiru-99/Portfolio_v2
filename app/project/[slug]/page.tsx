@@ -11,7 +11,8 @@ interface PageProps {
 
 export default async function ProjectDetailPage({ params }: PageProps) {
     const { slug } = await params;
-    const project = projects.find((p: Project) => p.slug === slug);
+    const lowerCaseSlug = slug.toLowerCase(); 
+    const project = projects.find((p: Project) => p.slug === lowerCaseSlug);
 
     if (!project) {
         notFound();
@@ -60,39 +61,54 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                         </div>
 
                         {/* External Links */}
+                        {/* External Links */}
                         <div className="flex gap-3 mb-8">
-                            {project.isLive && project.liveUrl && (
-                                <a
-                                    href={project.liveUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-2 text-sm text-white/70 hover:text-white transition-colors"
-                                >
-                                    <ExternalLink size={16} />
-                                    <span>Live Demo</span>
-                                </a>
-                            )}
-                            {project.repoUrl && (
-                                <a
-                                    href={project.repoUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-2 text-sm text-white/70 hover:text-white transition-colors"
-                                >
-                                    <Github size={16} />
-                                    <span>View Source</span>
-                                </a>
-                            )}
+                          {project.isLive && project.liveUrl && (
+                            <a
+                              href={project.liveUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 text-sm text-white/70 hover:text-white transition-colors"
+                            >
+                              <ExternalLink size={16} />
+                              <span>Live Demo</span>
+                            </a>
+                          )}
+                        
+                          {project.repoUrl && (
+                            <a
+                              href={project.repoUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 text-sm text-white/70 hover:text-white transition-colors"
+                            >
+                              <Github size={16} />
+                              <span>View Source</span>
+                            </a>
+                          )}
+                        
+                          {/* ✅ NEW: Demo Video Link */}
+                          {project.demoUrl && (
+                            <a
+                              href={project.demoUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 text-sm text-white/70 hover:text-white transition-colors"
+                            >
+                              <ExternalLink size={16} />
+                              <span>Watch Demo</span>
+                            </a>
+                          )}
                         </div>
                     </div>
 
                     {/* Project Image */}
                     <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 mb-12 border border-white/10">
                         <Image
-                            src={project.image}
+                            src={project.productImage}
                             alt={project.title}
                             fill
-                            className="object-cover"
+                            className="object-contain"
                         />
                     </div>
 

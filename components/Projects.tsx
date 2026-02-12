@@ -1,4 +1,5 @@
 import ProjectCard from "./ProjectCard"
+import Link from "next/link"
 export default function Projects() {
   return (
     <>
@@ -12,31 +13,44 @@ export default function Projects() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 place-items-center">
             <ProjectCard
               title="Tutorr"
-              description="A comprehensive study platform with notes, flashcards, quizzes, AI chatbot, and interactive learning tools."
-              image="/assets/profile.jpeg"
+              description="A marketplace platform for students and tutors to schedule bookings , with cal.com like scheduling infra with concurrency safe bookings with international payments and checkout integrated "
+              image="/assets/projects/dragon.png"
               isLive={true}
+              techStack = {["NextJS" , "Express" , "Typescript" , "Turborepo"  , "Redis" , "BullMq" , "Razorpay" , "AWS"]}
+              slug="tutorr"
+              status={"completed"}
             />
             <ProjectCard
               title="Minderr"
-              description="A comprehensive study platform with notes, flashcards, quizzes, AI chatbot, and interactive learning tools."
-              image="/assets/profile.jpeg"
+              description="Platform for people who forget things like me , to constantly nudge timely reminders to get the tasks done before deadline."
+              image="/assets/projects/vagabond.jpeg"
               isLive={true}
+              techStack = {["NextJS" , "Prisma" , "PostgreSQL" , "Inngest"  , "Bun" , "Docker"]}
+              slug="minderr"
+              status="completed"
             />
             <ProjectCard
               title="Tawk"
-              description="A comprehensive study platform with notes, flashcards, quizzes, AI chatbot, and interactive learning tools."
-              image="/assets/profile.jpeg"
+              description="A communication platform with video and audio conferencing made from scratch with scalable chat using apache kafka and redis pub/sub"
+              image="/assets/projects/samurai.png"
               isLive={true}
+              techStack = {["NextJS" , "Express" , "Typescript" , "Kafka"  , "Redis Pub/Sub" , "Primsa" , "PostgreSQL" , "AWS S3"]}
+              slug="tawk"
+              status="completed"
             />
             <ProjectCard
               title="Feedsage"
-              description="A comprehensive study platform with notes, flashcards, quizzes, AI chatbot, and interactive learning tools."
-              image="/assets/profile.jpeg"
-              isLive={false}
+              description="Platform to take control of your own youtube feed to filter bs and distracting videos to increase productivity."
+              image="/assets/projects/guy.jpeg"
+              isLive={false} 
+              techStack = {["NextJS" , "Gemini" , "Hono & Bun" , "Typescript"  , "Drizzle" , "Postgres" , "Redis"]}
+              slug="feedsage"
+              status="building"
             />
           </div>
 
-          <button
+          <Link
+            href="/projects"
             className="
               group mt-6 mx-auto
               flex items-center gap-2
@@ -65,7 +79,7 @@ export default function Projects() {
             >
               →
             </span>
-          </button>
+          </Link>
         </div>
       </div>
     </>

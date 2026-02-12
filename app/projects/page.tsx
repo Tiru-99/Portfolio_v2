@@ -37,6 +37,8 @@ export default function ProjectsPage() {
                   image={project.image}
                   isLive={project.isLive}
                   slug={project.slug}
+                  techStack={project.techStack}
+                  status={project.status}
                 />
               ))}
             </div>

@@ -3,26 +3,20 @@
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Eye } from "lucide-react";
+import axios from "axios";
 
-export default function Footer({visitors} : {visitors : number}) {
-    const [visitorCount, setVisitorCount] = useState<number>(0);
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-        // Simulate visitor count with localStorage
-        const storedCount = localStorage.getItem("visitorCount");
-        const initialCount = storedCount ? parseInt(storedCount, 10) : 1000; // Start at 1000 for realistic look
-
-        // Increment on every mount (visit)
-        const newCount = initialCount + 1;
-        localStorage.setItem("visitorCount", newCount.toString());
-        setVisitorCount(newCount);
-    }, []);
-
-    if (!mounted) {
-        return null; // Avoid hydration mismatch
-    }
+export default function Footer() {
+  const [ visitors , setVisitors ] = useState<number>(0); 
+  useEffect(() => {
+    axios.get("/api/visitors")
+      .then((res) => {
+        console.log("The response is " , res.data); 
+        setVisitors(res.data.uniqueVisitors); 
+      })
+      .catch((err) => {
+        console.log("Something went wrong while fetching count" , err); 
+      });
+  }, []);
 
     return (
         <footer className="w-full py-8 px-4 border-t border-white/10 bg-black/50 backdrop-blur-md">
