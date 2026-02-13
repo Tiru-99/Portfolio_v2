@@ -93,7 +93,7 @@ export default function Experience() {
           {/*todo use map here */}
           <div className="flex flex-wrap gap-2 mt-3">
             <TechTag name="React" logo="/assets/tech/React.svg" />
-            <TechTag name="Next.js" logo="/assets/tech/nextjs.png" />
+            <TechTag name="Next.js" logo="/assets/tech/Nextjs.png" />
             <TechTag name="TypeScript" logo="/assets/tech/TypeScript.svg" />
             <TechTag name="PostgreSQL" logo="/assets/tech/PostgresSQL.svg" />
             <TechTag name="Redis" logo="/assets/tech/Redis.svg" />
