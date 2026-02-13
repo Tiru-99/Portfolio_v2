@@ -183,7 +183,7 @@ export const projects: Project[] = [
     description:
       "A search engine built from scratch in C++ implementing custom indexing, inverted indexes, and ranking algorithms.",
     image: "/assets/projects/tanjiro.jpeg",
-    productImage: "/assets/projects/tanjiro.png",
+    productImage: "/assets/projects/tanjiro.jpeg",
     status: "completed",
     techStack: [
       "C++",
@@ -280,6 +280,49 @@ export const projects: Project[] = [
       "Hot standby read replica",
       "Automated Dockerized setup",
       "Production-style replication topology",
+    ],
+  },
+  {
+    id: "8",
+    slug: "helpdash",
+    title: "HelpDash",
+    description:
+      "Multi-agent AI backend for automated support handling and dashboard analytics.",
+    image: "/assets/projects/guts.jpeg",
+    productImage: "/assets/projects/guts.jpeg",
+    status: "completed",
+    techStack: [
+      "Python",
+      "FastAPI",
+      "MongoDB",
+      "CrewAI",
+      "Gemini API",
+      "Docker",
+      "NGINX",
+      "Gunicorn",
+      "Uvicorn",
+    ],
+    repoUrl: "https://github.com/tiru-99/helpdash",
+    fullDescription:
+      "HelpDash is a production-ready multi-agent backend built using FastAPI. It exposes AI-powered Support and Dashboard agents via a versioned REST API. CrewAI handles agent orchestration, Gemini API powers LLM responses, and MongoDB Atlas stores structured data. The backend is containerized and served using Gunicorn + Uvicorn behind NGINX, with environment-based configuration and CORS support.",
+    architecture: [
+      "FastAPI REST API Layer",
+      "Support Agent (LLM-powered)",
+      "Dashboard Analytics Agent",
+      "CrewAI Agent Orchestration",
+      "MongoDB Atlas Database",
+      "Gunicorn + Uvicorn ASGI Server",
+      "NGINX Reverse Proxy",
+      "Dockerized Deployment",
+    ],
+    features: [
+      "Multi-agent AI orchestration",
+      "Automated support query handling",
+      "Dashboard insights generation",
+      "Versioned API endpoints",
+      "Health check routes",
+      "CORS-enabled backend",
+      "Production-ready deployment setup",
     ],
   },
 ];

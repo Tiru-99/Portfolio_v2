@@ -449,7 +449,7 @@ export default function AboutPage() {
               Always open to discussing these ideas or building something new.
             </p>
             <Link
-              href="/#contact"
+              href="/contact"
               className="group inline-flex items-center gap-4 px-10 py-5 bg-white text-black rounded-full font-semibold transition-all hover:bg-white/90 shadow-[0_0_50px_rgba(255,255,255,0.1)] active:scale-95"
             >
               <span>Get in Touch</span>

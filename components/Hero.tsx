@@ -118,8 +118,10 @@ export default function Hero() {
         variants={FADE_UP_ANIMATION_VARIANTS}
         className="flex justify-center px-4 gap-4 mt-6 font-hanken"
       >
-        <Link
+        <a
           href="https://drive.google.com/file/d/1eJ0M2V5foZrvjk5r9_B9zDffCkIjPgxZ/view"
+          target="_blank"
+          rel="noopener noreferrer"
           className="
             btn-surface btn-primary
             px-4 py-2 rounded-md
@@ -131,9 +133,11 @@ export default function Hero() {
         >
           <TbFileCv className="w-4 h-4 text-white/80" />
           <span>Resume / CV</span>
-        </Link>
+        </a>
 
-        <button
+
+        <Link
+          href="/contact"
           className="
               bg-white
               text-black
@@ -145,7 +149,7 @@ export default function Hero() {
         >
           <BiPaperPlane className="w-4 h-4 text-black/80 " />
           <span>Get in touch</span>
-        </button>
+        </Link>
       </motion.div>
     </motion.div>
   );

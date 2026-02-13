@@ -41,6 +41,7 @@ export default function Navbar() {
     { name: "Work", href: "/#work", id: "experience" },
     { name: "Projects", href: "/projects", id: "projects" },
     { name: "Blog", href: "/blogs", id: "blog" },
+    { name: "Contact", href: "/contact", id: "contact_page" },
   ];
 
   const handleNavClick = (e: React.MouseEvent, href: string) => {
@@ -68,7 +69,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed top-0 left-0 w-full h-32 backdrop-blur-md z-40 pointer-events-none [mask-image:linear-gradient(to_bottom,black_0%,black_30%,transparent_100%)]"
+            className="fixed top-0 left-0 w-full h-32 backdrop-blur-md z-40 pointer-events-none mask-[linear-gradient(to_bottom,black_0%,black_30%,transparent_100%)]"
           />
         )}
       </AnimatePresence>
@@ -110,14 +111,6 @@ export default function Navbar() {
                     {link.name}
                   </Link>
                 ))}
-
-                <button className="flex items-center gap-1 px-4 py-2 rounded-full text-gray-400 text-xs font-medium hover:text-white transition-colors group">
-                  More
-                  <ChevronDown
-                    size={14}
-                    className="group-hover:rotate-180 transition-transform"
-                  />
-                </button>
               </div>
 
               {/* Mobile Menu Toggle */}
