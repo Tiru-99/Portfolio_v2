@@ -5,7 +5,6 @@ export interface Project {
   description: string;
   image: string;
   productImage: string;
-  isLive: boolean;
   techStack: string[];
   demoUrl?: string;
   liveUrl?: string;
@@ -25,7 +24,6 @@ export const projects: Project[] = [
       "A marketplace platform for students and tutors with concurrency-safe scheduling, real-time booking infrastructure across global timezones like cal.com, and international payments.",
     image: "/assets/projects/dragon.png",
     productImage: "/assets/projects/tutorr.png",
-    isLive: true,
     status: "completed",
     techStack: [
       "NextJS",
@@ -39,7 +37,7 @@ export const projects: Project[] = [
     ],
     demoUrl:
       "https://drive.google.com/file/d/1aQhSzbVgnIfhWbJ5geHcsjI4z0hYmig-/view",
-    liveUrl: "https://tutorr.app",
+    liveUrl: "https://tutorr-web.vercel.app/",
     repoUrl: "https://github.com/Tiru-99/Tutorr",
     fullDescription:
       "Tutorr is a scalable tutor-student marketplace inspired by cal.com-style scheduling infrastructure. It ensures concurrency-safe bookings using transactional logic and background workers. The system supports international payments, queue-based processing, and real-time booking status updates.",
@@ -70,13 +68,12 @@ export const projects: Project[] = [
       "Platform for people who forget things — timely nudges, intelligent reminders, and structured task execution before deadlines.",
     image: "/assets/projects/vagabond.jpeg",
     productImage: "/assets/projects/minderr.png",
-    isLive: true,
     status: "completed",
     techStack: ["NextJS", "Prisma", "PostgreSQL", "Inngest", "Bun", "Docker"],
     demoUrl:
       "https://drive.google.com/file/d/1N98ZjE6Xyay3BXv0hhgZpuFMvbZWm9pD/view?usp=sharing",
-    liveUrl: "https://minderr.app",
-    repoUrl: "https://github.com/username/minderr",
+    liveUrl: "https://minderapp.online/",
+    repoUrl: "https://github.com/tiru-99/minder",
     fullDescription:
       "Minderr is a productivity-first reminder platform designed to reduce deadline anxiety. It leverages event-driven workflows using Inngest to trigger intelligent reminder sequences, ensuring tasks are completed before due time.",
     architecture: [
@@ -105,7 +102,6 @@ export const projects: Project[] = [
       "A communication platform with video and audio conferencing built from scratch with scalable chat using Apache Kafka and Redis Pub/Sub.",
     image: "/assets/projects/samurai.png",
     productImage: "/assets/projects/tawk.png",
-    isLive: true,
     status: "completed",
     techStack: [
       "NextJS",
@@ -119,8 +115,8 @@ export const projects: Project[] = [
     ],
     demoUrl:
       "https://drive.google.com/file/d/1GnlFghmKmGhmp8UjTPJxNuJf398RzEYS/view?usp=sharing",
-    liveUrl: "https://tawk.chat",
-    repoUrl: "https://github.com/username/tawk",
+    liveUrl: "https://tawk-two.vercel.app/",
+    repoUrl: "https://github.com/tiru-99/Tawk",
     fullDescription:
       "Tawk is a real-time communication platform featuring scalable chat architecture powered by Apache Kafka and Redis Pub/Sub. It supports voice and video conferencing, persistent chat history, and horizontal scaling for large concurrent sessions.",
     architecture: [
@@ -150,7 +146,6 @@ export const projects: Project[] = [
       "Platform to take control of your YouTube feed — filter distractions, remove noise, and prioritize high-value content.",
     image: "/assets/projects/guy.jpeg",
     productImage: "/assets/projects/feedsage.png",
-    isLive: false,
     status: "building",
     techStack: [
       "NextJS",
@@ -162,7 +157,7 @@ export const projects: Project[] = [
       "Postgres",
       "Redis",
     ],
-    repoUrl: "https://github.com/username/feedsage",
+    repoUrl: "https://github.com/Tiru-99/Feedsage-2.0",
     fullDescription:
       "Feedsage is an AI-powered content filtering system that analyzes YouTube video metadata and transcripts to filter distracting or low-value content. It prioritizes educational and productivity-focused content using AI scoring mechanisms.",
     architecture: [
@@ -184,13 +179,12 @@ export const projects: Project[] = [
   {
     id: "5",
     slug: "cpp-search-engine",
-    title: "Search Engine (C++)",
+    title: "Plasticsearch",
     description:
       "A search engine built from scratch in C++ implementing custom indexing, inverted indexes, and ranking algorithms.",
     image: "/assets/projects/tanjiro.jpeg",
     productImage: "/assets/projects/tanjiro.png",
-    isLive: false,
-    status:"completed",
+    status: "completed",
     techStack: [
       "C++",
       "Inverted Index",
@@ -198,7 +192,7 @@ export const projects: Project[] = [
       "Document parsing and indexing",
       "File I/O",
     ],
-    repoUrl: "https://github.com/Tiru-99/cpp-search-engine",
+    repoUrl: "https://github.com/Tiru-99/plasticsearch",
     fullDescription:
       "A low-level search engine implementation written in C++ that builds an inverted index from raw documents, supports keyword-based retrieval, and ranks results using TF-IDF scoring. Designed with performance in mind using optimized data structures and multithreading.",
     architecture: [
@@ -225,8 +219,7 @@ export const projects: Project[] = [
       "A production-style distributed search system using Debezium CDC, Apache Kafka streaming, and Elasticsearch for near real-time indexing.",
     image: "/assets/projects/soldier.jpeg",
     productImage: "/assets/projects/soldier.jpeg",
-    isLive: false,
-    status:"completed",
+    status: "completed",
     techStack: [
       "TypeScript",
       "PostgreSQL",
@@ -235,7 +228,7 @@ export const projects: Project[] = [
       "Elasticsearch",
       "Docker",
     ],
-    repoUrl: "https://github.com/Tiru-99/scalable-search",
+    repoUrl: "https://github.com/Tiru-99/cdc",
     fullDescription:
       "A real-time distributed search platform built using Change Data Capture (CDC). Database changes in PostgreSQL are captured via Debezium and streamed into Apache Kafka. A TypeScript-based consumer service processes events and indexes documents into Elasticsearch, enabling scalable, near real-time search capabilities.",
     architecture: [
@@ -263,8 +256,7 @@ export const projects: Project[] = [
       "Dockerized PostgreSQL master-slave streaming replication setup for high availability and fault tolerance.",
     image: "/assets/projects/thorfinn.jpeg",
     productImage: "/assets/projects/thorfinn.jpeg",
-    isLive: false,
-    status:"completed",
+    status: "completed",
     techStack: [
       "PostgreSQL",
       "Docker",
@@ -272,7 +264,7 @@ export const projects: Project[] = [
       "Streaming Replication",
       "Linux",
     ],
-    repoUrl: "https://github.com/Tiru-99/postgres-replication",
+    repoUrl: "https://github.com/Tiru-99/Replication_Pg",
     fullDescription:
       "A Docker Compose-based infrastructure template that sets up PostgreSQL streaming replication between a primary (master) and replica (slave). Designed for high availability, failover experimentation, and understanding WAL-based replication internals.",
     architecture: [

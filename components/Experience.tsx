@@ -1,10 +1,17 @@
 import { MapPin, Briefcase } from "lucide-react";
 import TechTag from "./TechBadge";
+import { motion } from "framer-motion";
 
 export default function Experience() {
   return (
     <section id="work" className="mt-20 scroll-mt-24">
-      <div className=" text-center pb-8 border-b  border-white/20">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className=" text-center pb-8 border-b  border-white/20"
+      >
         <p className="text-white/50 text-xs">THE EXPERIENCE</p>
         <div className="text-4xl font-instrument">
           <div>Experience That</div>
@@ -18,15 +25,22 @@ export default function Experience() {
           </div>
         </div>
 
-      </div>
+      </motion.div>
 
-      <div className="flex flex-col md:flex-row border-b border-white/20">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="flex flex-col md:flex-row border-b border-white/20"
+      >
         {/* Company section */}
         <div className="md:flex-1 md:border-r  border-white/20 px-8 pt-10">
           <p className="text-white/50 text-xs">OCT 2024 - JAN 2025</p>
 
           <div className="flex items-center gap-3 mt-4">
-            <img
+            <motion.img
+              whileHover={{ scale: 1.05 }}
               src="/assets/profile.jpeg"
               className="h-10 w-10 rounded-md"
               alt="Company logo"
@@ -76,8 +90,7 @@ export default function Experience() {
             </li>
           </ul>
 
-          {/*Badges*/}
-
+          {/*todo use map here */}
           <div className="flex flex-wrap gap-2 mt-3">
             <TechTag name="React" logo="/assets/tech/React.svg" />
             <TechTag name="Next.js" logo="/assets/tech/nextjs.png" />
@@ -91,12 +104,8 @@ export default function Experience() {
             <TechTag name="Github" logo="/assets/tech/GitHub.svg" />
             <TechTag name="Appwrite" logo="/assets/tech/Appwrite.svg" />
           </div>
-
-
-
-
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

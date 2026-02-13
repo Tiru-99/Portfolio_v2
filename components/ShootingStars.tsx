@@ -46,6 +46,16 @@ export const ShootingStars = ({
         const createStar = () => {
             if (!isMounted) return;
 
+            // Prevent star accumulation when tab is inactive
+            if (typeof document !== "undefined" && document.hidden) {
+                const randomDelay = Math.random() * (maxDelay - minDelay) + minDelay;
+                setTimeout(createStar, randomDelay);
+                return;
+            }
+
+            const svg = svgRef.current;
+            if (!svg) return;
+
             const { width, height } = svg.getBoundingClientRect();
             const angle = 45;
 
@@ -69,10 +79,10 @@ export const ShootingStars = ({
         };
 
         // Start 3 loops for 2-3 stars at a time
-        const STAR_STREAMS = 3; // 🔥 increase this number
-        
+        const STAR_STREAMS = 3;
+
         for (let i = 0; i < STAR_STREAMS; i++) {
-          setTimeout(createStar, i * 800);
+            setTimeout(createStar, i * 800);
         }
 
 

@@ -15,6 +15,7 @@ export default function Home() {
   
   return (
     <Container className="max-w-5xl">
+      <Navbar/>
       <OnekoCat/>
       <Hero />
       <Experience />

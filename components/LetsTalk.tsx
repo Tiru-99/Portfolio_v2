@@ -5,6 +5,7 @@ import Image from "next/image";
 import { ShootingStars } from "@/components/ShootingStars";
 import { StarField } from "@/components/StarField"
 import BookCall from "./Booking";
+import { motion } from "framer-motion";
 
 export default function LetsTalk() {
     return (
@@ -21,7 +22,13 @@ export default function LetsTalk() {
                 starHeight={1}
                 className="absolute inset-0 -z-10"
             />
-            <div className="w-full max-w-4xl text-center z-10">
+            <motion.div
+                initial={{ opacity: 0, scale: 0.98 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="w-full max-w-4xl text-center z-10"
+            >
                 <p className="text-gray-500 text-sm mb-6 tracking-wide uppercase">
                     If you've scrolled this far...
                 </p>
@@ -31,7 +38,6 @@ export default function LetsTalk() {
 
                 <div className="flex justify-center">
                     <a
-                      
                         className="group inline-flex items-center gap-4 p-2 pr-6 bg-black/40 border border-white/10 rounded-full hover:bg-white/5 hover:border-white/20 transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,255,255,0.05)]"
                     >
                         <div className="relative w-10 h-10 rounded-full overflow-hidden border border-white/10 group-hover:border-white/20 transition-colors">
@@ -42,19 +48,19 @@ export default function LetsTalk() {
                                 className="object-cover"
                             />
                         </div>
-                        <BookCall/>
+                        <BookCall />
                         <div className="pl-3 pr-1 opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300">
                             <ArrowRight size={16} className="text-gray-400 group-hover:text-white" />
                         </div>
                     </a>
                 </div>
-                
-                {/*<div className="inline-flex mt-3 items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-[10px] font-medium">
+            </motion.div>
+
+            {/*<div className="inline-flex mt-3 items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-[10px] font-medium">
                   <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
                   Open to work & freelance projects
                 </div>*/}
 
-            </div>
         </section>
     );
 }

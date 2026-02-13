@@ -5,6 +5,13 @@ import { projects, Project } from "../../data/projects";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
+import { motion } from "framer-motion";
+
+const FADE_UP_VARIANTS = {
+  hidden: { opacity: 0, y: 20, filter: "blur(4px)" },
+  show: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.5 } },
+};
+
 export default function ProjectsPage() {
   return (
     <div className=" min-h-screen">
@@ -19,29 +26,62 @@ export default function ProjectsPage() {
             Back to Home
           </Link>
 
-          <div className="text-center mb-16">
-            <p className="text-xs font-hanken text-white/50 mb-2">PORTFOLIO</p>
-            <h1 className="text-center text-5xl text-white font-instrument mb-4">All Projects</h1>
-            <p className="text-sm font-hanken text-white/40 max-w-lg mx-auto">
+          <motion.div
+            initial="hidden"
+            animate="show"
+            variants={{
+              hidden: {},
+              show: {
+                transition: {
+                  staggerChildren: 0.1,
+                },
+              },
+            }}
+            className="text-center mb-16"
+          >
+            <motion.p variants={FADE_UP_VARIANTS} className="text-xs font-hanken text-white/50 mb-2">PORTFOLIO</motion.p>
+            <motion.h1 variants={FADE_UP_VARIANTS} className="text-center text-5xl text-white font-instrument mb-4">All Projects</motion.h1>
+            <motion.p variants={FADE_UP_VARIANTS} className="text-sm font-hanken text-white/40 max-w-lg mx-auto">
               A collection of my work, ranging from web applications to mobile apps and AI experiments.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
           <div className="max-w-3xl mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 place-items-center">
+            <motion.div
+              initial="hidden"
+              animate="show"
+              variants={{
+                hidden: {},
+                show: {
+                  transition: {
+                    staggerChildren: 0.1,
+                    delayChildren: 0.3,
+                  },
+                },
+              }}
+              className="grid grid-cols-1 md:grid-cols-2 gap-6 place-items-center"
+            >
               {projects.map((project: Project) => (
-                <ProjectCard
+                <motion.div
                   key={project.id}
-                  title={project.title}
-                  description={project.description}
-                  image={project.image}
-                  isLive={project.isLive}
-                  slug={project.slug}
-                  techStack={project.techStack}
-                  status={project.status}
-                />
+                  variants={{
+                    hidden: { opacity: 0, y: 20, filter: "blur(4px)" },
+                    show: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.5 } }
+                  }}
+                >
+                  <ProjectCard
+                    title={project.title}
+                    description={project.description}
+                    image={project.image}
+                    liveLink={project.liveUrl}
+                    githubLink={project.repoUrl}
+                    slug={project.slug}
+                    techStack={project.techStack}
+                    status={project.status}
+                  />
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </div>
       </Container>

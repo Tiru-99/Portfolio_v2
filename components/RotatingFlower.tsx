@@ -11,15 +11,16 @@ export default function FlowerSection() {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "end start"],
+    offset: ["start 90%", "end 10%"],
   });
 
   const rotate = useTransform(scrollYProgress, [0, 1], [0, 180]);
 
   const smoothRotate = useSpring(rotate, {
-    stiffness: 60,
-    damping: 15,
-    mass: 0.5,
+    stiffness: 40,
+    damping: 20,
+    mass: 1,
+    restDelta: 0.001,
   });
 
   return (

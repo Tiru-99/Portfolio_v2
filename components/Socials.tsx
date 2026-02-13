@@ -5,7 +5,7 @@ export default function Socials(){
     <>
       <div className="mt-3 flex items-center gap-4 text-white/70">
         <a
-          href="https://github.com/yourusername"
+          href="https://github.com/tiru-99"
           target="_blank"
           rel="noreferrer"
           className="hover:text-white transition"
@@ -15,7 +15,7 @@ export default function Socials(){
         </a>
       
         <a
-          href="https://linkedin.com/in/yourusername"
+          href="https://www.linkedin.com/in/aayush-tirmanwar-b81a62261/"
           target="_blank"
           rel="noreferrer"
           className="hover:text-white transition"
@@ -25,7 +25,7 @@ export default function Socials(){
         </a>
         
         <a
-          href="https://linkedin.com/in/yourusername"
+          href="https://x.com/tiru299"
           target="_blank"
           rel="noreferrer"
           className="hover:text-white transition"
@@ -35,7 +35,7 @@ export default function Socials(){
         </a>
       
         <a
-          href="mailto:your@email.com"
+          href="https://mail.google.com/mail/u/0/#inbox?compose=DmwnWsttFtppvfLSjCnFjRqdGQdDhVpDXcfcjgDftMKTpkbTcJGsmTTwFrJRvfMzsZWnBhPjsXDQ"
           className="hover:text-white transition"
           aria-label="Email"
         >

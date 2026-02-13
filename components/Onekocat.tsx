@@ -32,6 +32,7 @@ const SPRITE_SETS: SpriteSet = {
 };
 
 const NEKO_SPEED = 10;
+const STOP_DISTANCE = 64;
 
 export default function OnekoCat() {
   const nekoRef = useRef<HTMLDivElement>(null);
@@ -45,6 +46,8 @@ export default function OnekoCat() {
   const [idleAnimation, setIdleAnimation] = useState<string | null>(null);
   const [idleAnimationFrame, setIdleAnimationFrame] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragOffset, setDragOffset] = useState<Position>({ x: 0, y: 0 });
 
   const setSprite = (name: string, frame: number) => {
     if (!nekoRef.current) return;
@@ -75,7 +78,7 @@ export default function OnekoCat() {
   };
 
   const handleFrame = () => {
-    if (!nekoRef.current || isPaused) return;
+    if (!nekoRef.current || isPaused || isDragging) return;
 
     setFrameCount(prev => prev + 1);
 
@@ -83,7 +86,7 @@ export default function OnekoCat() {
     const diffY = nekoPos.y - mousePos.y;
     const distance = Math.sqrt(diffX ** 2 + diffY ** 2);
 
-    if (distance < NEKO_SPEED) {
+    if (distance < STOP_DISTANCE) {
       handleIdle();
       return;
     }
@@ -112,8 +115,21 @@ export default function OnekoCat() {
 
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
+      if (isDragging) {
+        setNekoPos({
+          x: event.clientX - dragOffset.x,
+          y: event.clientY - dragOffset.y
+        });
+        return;
+      }
       if (!isPaused) {
         setMousePos({ x: event.clientX, y: event.clientY });
+      }
+    };
+
+    const handleMouseUp = () => {
+      if (isDragging) {
+        setIsDragging(false);
       }
     };
 
@@ -130,18 +146,28 @@ export default function OnekoCat() {
       animationFrameId.current = requestAnimationFrame(animate);
     };
 
-    document.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mouseup', handleMouseUp);
     animationFrameId.current = requestAnimationFrame(animate);
 
     return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseup', handleMouseUp);
       if (animationFrameId.current) {
         cancelAnimationFrame(animationFrameId.current);
       }
     };
-  }, [nekoPos, mousePos, frameCount, isPaused]);
+  }, [nekoPos, mousePos, frameCount, isPaused, isDragging, dragOffset]);
 
-  const handleClick = () => {
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    setDragOffset({
+      x: e.clientX - nekoPos.x,
+      y: e.clientY - nekoPos.y
+    });
+  };
+
+  const handleDoubleClick = () => {
     setIsPaused(prev => !prev);
     if (!isPaused) {
       setSprite("sleeping", 0);
@@ -152,18 +178,21 @@ export default function OnekoCat() {
     <div
       ref={nekoRef}
       aria-hidden="true"
-      onClick={handleClick}
+      onMouseDown={handleMouseDown}
+      onDoubleClick={handleDoubleClick}
       style={{
         width: '32px',
         height: '32px',
         position: 'fixed',
         pointerEvents: 'auto',
-        cursor: 'pointer',
+        cursor: isDragging ? 'grabbing' : 'grab',
         imageRendering: 'pixelated',
         left: `${nekoPos.x - 16}px`,
         top: `${nekoPos.y - 16}px`,
         zIndex: 2147483647,
         backgroundImage: 'url(/assets/oneko.gif)',
+        userSelect: 'none',
+        WebkitUserSelect: 'none',
       }}
     />
   );

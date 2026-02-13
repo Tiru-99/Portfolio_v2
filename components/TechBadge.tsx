@@ -15,6 +15,7 @@ export default function TechTag({ name, logo }: TechTagProps) {
         bg-white/7
         leading-none
         border-t-white/25
+        hover:cursor-pointer
       "
     >
       <img

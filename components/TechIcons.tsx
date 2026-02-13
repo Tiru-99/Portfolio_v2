@@ -13,11 +13,11 @@ const techIcons = [
   "/assets/tech/Express.png",
   "/assets/tech/React.svg",
   "/assets/tech/Bun.svg",
-  "/assets/tech/nextjs.png",
+  "/assets/tech/Nextjs.png",
   "/assets/tech/Redis.svg",
-  "/assets/tech/kafka.png",
-  "/assets/tech/bash.png",
-  "/assets/tech/C++ (CPlusPlus).svg",
+  "/assets/tech/Kafka.png",
+  "/assets/tech/Bash.png",
+  "/assets/tech/C++(cpp).svg",
   "/assets/tech/Docker.svg",
   "/assets/tech/Elastic Search.svg",
   "/assets/tech/Git.svg",
@@ -28,7 +28,7 @@ const techIcons = [
   "/assets/tech/MongoDB.svg",
   "/assets/tech/Prometheus.svg",
   "/assets/tech/Python.svg",
-  "/assets/tech/debeziumio-icon (1).svg",
+  "/assets/tech/Debezium.svg",
 ];
 
 // 🔥 Your customized scatter offsets (with toppling)
@@ -117,10 +117,13 @@ export default function TechIcons({ scrollTarget }: { scrollTarget: RefObject<HT
               key={src}
               style={{ x, y, rotate, rotateX, transformPerspective: isLargeScreen ? 800 : undefined }}
               className="
+                group 
+                relative
                 rounded-xl
                 bg-[#232323]
                 border border-white/8
                 border-t-white/20
+                hover:cursor-pointer
                 p-2
               "
             >
@@ -129,6 +132,27 @@ export default function TechIcons({ scrollTarget }: { scrollTarget: RefObject<HT
                 alt=""
                 className="w-8 h-8"
               />
+              <div
+                  className="
+                    absolute
+                    -top-8
+                    left-1/2
+                    -translate-x-1/2
+                    whitespace-nowrap
+                    rounded-md
+                    bg-black/80
+                    text-white text-xs
+                    px-2 py-1
+                    opacity-0
+                    scale-95
+                    transition-all duration-200
+                    group-hover:opacity-100
+                    group-hover:scale-100
+                    pointer-events-none
+                  "
+                >
+                  {getTechName(src)}
+                </div>
             </motion.div>
           );
         })}
@@ -136,3 +160,11 @@ export default function TechIcons({ scrollTarget }: { scrollTarget: RefObject<HT
     </div>
   );
 }
+
+const getTechName = (path: string) => {
+  const fileName = path.split("/").pop() || "";
+  return fileName
+    .replace(/\.[^/.]+$/, "") 
+    .replace(/[-_()]/g, " ") 
+    .trim();
+};

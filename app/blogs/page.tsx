@@ -7,7 +7,7 @@ import Link from "next/link"
 
 export default function Home() {
   return (
-    <Container>
+    <Container className="max-w-5xl">
       <section className="min-h-screen flex flex-col items-center justify-center text-center relative overflow-hidden">
         
         {/* Soft Background Glow */}
