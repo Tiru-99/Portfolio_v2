@@ -70,23 +70,26 @@ export default function Experience() {
           {/* Description */}
           <ul className="mt-4 space-y-1 text-sm text-white/50 list-disc font-hanken">
             <li>
-              Built and shipped <span className="text-white">end-to-end full-stack features</span> that were used across
-              <span className="text-white"> core platform flows</span>, impacting real users in production.
+              Implemented <span className="text-white">Redis-based caching strategies</span>, achieving 
+              <span className="text-white"> 50% faster API response times</span> and significantly reducing 
+              <span className="text-white"> database I/O bottlenecks</span>.
             </li>
-
+          
             <li>
-              Designed and architected <span className="text-white">critical backend services</span> with a strong focus on
-              <span className="text-white"> scalability, reliability, and maintainability</span>.
+              Architected <span className="text-white">critical backend workflows</span> for a LinkedIn-style broker platform using 
+              <span className="text-white"> Node.js, TypeScript, and PostgreSQL</span>, with strong emphasis on 
+              <span className="text-white"> performance, modularity, and scalability</span>.
             </li>
-
+          
             <li>
-              Implemented <span className="text-white">Redis-based caching strategies</span> to
-              <span className="text-white"> significantly reduce API latency</span> and improve overall system performance.
+              Spearheaded the <span className="text-white">end-to-end architecture and deployment</span> of a 
+              <span className="text-white">production-ready car dealership platform</span>, owning 
+              <span className="text-white">data logic, schema design, and API orchestration</span> using a BaaS-driven approach.
             </li>
-
+          
             <li>
-              Collaborated closely with <span className="text-white">product managers and engineers</span> in a
-              <span className="text-white">fast-moving startup environment</span>, contributing to rapid feature iteration.
+              Shipped multiple <span className="text-white">high-performance UI platforms</span> with clean UI/UX, 
+              serving <span className="text-white">200+ daily active visitors</span> in production.
             </li>
           </ul>
 
