@@ -23,21 +23,21 @@ const phonkTracks = [
 const animeWatches = [
   {
     title: "One Piece",
-    tags: ["Sci-Fi", "Thriller"],
+    tags: ["Action", "Adventure", "Fantasy"],
     image: "/assets/one-piece.jpeg",
     quote: "Listen Luffy . By both experiencing victory and defeat , running away and shedding tears , a man will become a man",
     author: "Shanks"
   },
   {
     title: "Attack on Titan",
-    tags: ["Action", "Drama"],
+    tags: ["Action", "Dark Fantasy", "Drama"],
     image: "/assets/aot.jpeg",
     quote: "There is no truth in this world. Anyone can become a God or a Devil, all it takes is for someone to claim that to be the truth.",
     author: "Eren Kruger"
   },
   {
     title: "My Hero Academia",
-    tags: ["Psychological"],
+    tags: ["Action", "Superhero", "Shounen"],
     image: "/assets/allmight.jpeg",
     quote:
       "If you feel yourself hitting up against your limit, remember for what cause you clench your fists... remember why you started down this path, and let that memory carry you beyond your limit",
@@ -45,7 +45,7 @@ const animeWatches = [
   },
   {
     title: "Vinland Saga",
-    tags: ["Seinen", "Mystery"],
+    tags: ["Seinen", "Historical", "Drama"],
     image: "/assets/thors.jpeg",
     quote: "You have no enemies , Nobody has them , Nobody in this world deserves to get hurt.",
     author: "Thors"
