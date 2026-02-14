@@ -37,22 +37,7 @@ export default function LetsTalk() {
                 </h2>
 
                 <div className="flex justify-center">
-                    <a
-                        className="group inline-flex items-center gap-4 p-2 pr-6 bg-black/40 border border-white/10 rounded-full hover:bg-white/5 hover:border-white/20 transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,255,255,0.05)]"
-                    >
-                        <div className="relative w-10 h-10 rounded-full overflow-hidden border border-white/10 group-hover:border-white/20 transition-colors">
-                            <Image
-                                src="/assets/profile.jpeg"
-                                alt="Profile"
-                                fill
-                                className="object-cover"
-                            />
-                        </div>
                         <BookCall />
-                        <div className="pl-3 pr-1 opacity-50 group-hover:opacity-100 group-hover:cursor-pointer group-hover:translate-x-1 transition-all duration-300">
-                            <ArrowRight size={16} className="text-gray-400 group-hover:text-white" />
-                        </div>
-                    </a>
                 </div>
             </motion.div>
 
