@@ -38,10 +38,10 @@ export default function Experience() {
         <div className="md:flex-1 md:border-r  border-white/20 px-8 pt-10">
           <p className="text-white/50 text-xs">OCT 2024 - JAN 2025</p>
 
-          <div className="flex items-center gap-3 mt-4">
+          <div className="flex items-center gap-3 mt-4 hover:cursor-pointer">
             <motion.img
               whileHover={{ scale: 1.05 }}
-              src="/assets/profile.jpeg"
+              src="/assets/experience/urbantap.jpeg"
               className="h-10 w-10 rounded-md"
               alt="Company logo"
             />

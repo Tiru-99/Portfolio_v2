@@ -24,7 +24,7 @@ const instrumentSerif = Instrument_Serif({
 
 
 export const metadata: Metadata = {
-  title: "Aayush Tirmanwar | Backend Developer & Systems Engineer",
+  title: "Aayush Tirmanwar | Engineer",
   description:
     "Portfolio of Aayush Tirmanwar — Backend Developer specializing in scalable systems, microservices, real-time architectures, and AI-driven applications using Node.js, TypeScript, PostgreSQL, Redis, Kafka, and AWS.",
   
