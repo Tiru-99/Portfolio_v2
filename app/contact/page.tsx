@@ -47,7 +47,7 @@ const CONTACTS = [
 
 export default function ContactPage() {
     return (
-        <div className="relative min-h-screen bg-black overflow-hidden selection:bg-white/10 selection:text-white">
+        <div className="relative min-h-screen overflow-hidden selection:bg-white/10 selection:text-white">
             <Container className="relative z-10 max-w-4xl pt-20 pb-32">
                 <motion.div
                     initial="hidden"
@@ -62,7 +62,7 @@ export default function ContactPage() {
                     }}
                     className="mx-auto px-12 md:px-20"
                 >
-                    {/* Back to Home */}
+                    
                     <motion.div variants={FADE_UP_VARIANTS}>
                         <Link
                             href="/"
@@ -73,7 +73,7 @@ export default function ContactPage() {
                         </Link>
                     </motion.div>
 
-                    {/* Header */}
+                    
                     <div className="mb-20">
                         <motion.p variants={FADE_UP_VARIANTS} className="text-xs font-hanken text-white/50 mb-2 tracking-[0.2em] uppercase">
                             REACH OUT
@@ -88,7 +88,7 @@ export default function ContactPage() {
                         </motion.p>
                     </div>
 
-                    {/* Contact Grid */}
+                    
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {CONTACTS.map((contact, idx) => (
                             <motion.a
@@ -116,7 +116,7 @@ export default function ContactPage() {
                         ))}
                     </div>
 
-                    {/* Footer Note */}
+                    
                     <motion.div
                         variants={FADE_UP_VARIANTS}
                         className="mt-20 flex items-center justify-center gap-2 text-[10px] tracking-[0.3em] uppercase text-white/20 select-none"

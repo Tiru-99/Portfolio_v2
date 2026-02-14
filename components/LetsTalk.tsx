@@ -49,7 +49,7 @@ export default function LetsTalk() {
                             />
                         </div>
                         <BookCall />
-                        <div className="pl-3 pr-1 opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300">
+                        <div className="pl-3 pr-1 opacity-50 group-hover:opacity-100 group-hover:cursor-pointer group-hover:translate-x-1 transition-all duration-300">
                             <ArrowRight size={16} className="text-gray-400 group-hover:text-white" />
                         </div>
                     </a>
