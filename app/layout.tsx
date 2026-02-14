@@ -59,7 +59,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Aayush Tirmanwar | Backend Developer",
+    title: "Aayush Tirmanwar | Engineer | Backend Developer",
     description:
       "Scalable backend systems, real-time architecture, and AI applications.",
   },
