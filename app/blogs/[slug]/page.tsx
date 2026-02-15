@@ -19,7 +19,7 @@ export default async function BlogPostPage({ params }: PageProps) {
     }
 
     return (
-        <BlogThemeWrapper title={post.title} date={post.date}>
+        <BlogThemeWrapper title={post.title} date={post.date} slug={slug}>
             {post.coverImage && (
                 <div className="relative w-full aspect-video rounded-xl overflow-hidden mb-12 border border-white/10">
                     <Image
