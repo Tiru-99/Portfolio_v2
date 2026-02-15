@@ -1,51 +1,40 @@
-"use client"
+import { getAllBlogs } from '@/lib/mdx'
+import BlogsList from '@/components/BlogsList'
+import Container from '@/components/Container'
+import Link from 'next/link'
+import { ArrowLeft } from 'lucide-react'
+// Keeping the header simple for SR and SEO, animations in client component
+export default function BlogsPage() {
+  const blogs = getAllBlogs()
 
-import { motion } from "framer-motion"
-import { ArrowLeft } from "lucide-react"
-import Container from "@/components/Container"
-import Link from "next/link"
-
-export default function Home() {
   return (
-    <Container className="max-w-5xl">
-      <section className="min-h-screen flex flex-col items-center justify-center text-center relative overflow-hidden">
-        
-        {/* Soft Background Glow */}
-        <div className="absolute w-[500px] h-[500px] bg-white/5 rounded-full blur-3xl opacity-40" />
-
-        <motion.h1
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="font-instrument text-5xl md:text-7xl italic text-white mb-6"
-        >
-          Cumming Soon...
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.6 }}
-          className="text-gray-400 max-w-md mb-10"
-        >
-          I’m building something exciting here. Stay tuned 👀
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-        >
+    <div className="min-h-screen">
+      <Container className="max-w-4xl">
+        <div className="mx-auto font-hanken pb-20">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white text-sm font-medium transition-all border border-white/10 hover:border-white/20 backdrop-blur-md"
+            className="inline-flex items-center gap-2 m-4 text-sm text-white/50 hover:text-white transition-colors mb-8 group px-4"
           >
-            <ArrowLeft size={16} />
-            Go to Home
+            <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
+            Back to Home
           </Link>
-        </motion.div>
 
-      </section>
-    </Container>
+          <div className="text-center mb-16">
+            <p className="text-xs font-hanken text-white/50 mb-2">WRITING</p>
+            <h1 className="text-center text-5xl text-white font-instrument mb-4 italic">Thoughts & Journals</h1>
+            <p className="text-sm font-hanken text-white/40 max-w-lg mx-auto">
+              A collection of technical articles, engineering journals, and personal reflections on software development.
+            </p>
+            <div className="mt-6 flex items-center justify-center gap-2 text-[10px] tracking-[0.2em] uppercase text-white/20 cursor-default select-none">
+              <div className="h-px w-8 bg-white/10" />
+              <span>Deep dives into the architecture of scalable systems</span>
+              <div className="h-px w-8 bg-white/10" />
+            </div>
+          </div>
+
+          <BlogsList blogs={blogs} />
+        </div>
+      </Container>
+    </div>
   )
 }

@@ -99,3 +99,118 @@ body {
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
 }
+
+/* Blog Content Styles */
+.blog-content h1 {
+  @apply text-4xl sm:text-5xl font-bold mb-8 mt-12;
+}
+
+.blog-content h2 {
+  @apply text-2xl sm:text-3xl font-bold mb-4 mt-10;
+}
+
+.blog-content h3 {
+  @apply text-xl sm:text-2xl font-bold mb-4 mt-8;
+}
+
+.blog-content p {
+  @apply text-lg leading-relaxed mb-6 opacity-80;
+}
+
+.blog-content ul {
+  @apply list-disc list-outside ml-6 mb-6 space-y-2;
+}
+
+.blog-content ol {
+  @apply list-decimal list-outside ml-6 mb-6 space-y-2;
+}
+
+.blog-content li {
+  @apply pl-2;
+}
+
+.blog-content blockquote {
+  @apply border-l-4 border-blue-500/50 pl-6 italic my-10 opacity-70 text-xl;
+}
+
+.blog-content code {
+  @apply font-mono leading-relaxed;
+}
+
+.blog-content .inline-code {
+  @apply bg-white/10 px-1.5 py-0.5 rounded text-sm text-blue-300;
+}
+
+.blog-content .code-block {
+  @apply bg-[#0d1117] p-6 rounded-2xl overflow-x-auto my-10 border border-white/5 font-mono text-[13px] leading-relaxed shadow-2xl backdrop-blur-sm text-slate-300;
+}
+
+/* Syntax Highlighting - Dark (Default) */
+.hljs-keyword,
+.hljs-selector-tag {
+  color: #ff79c6;
+}
+
+.hljs-string {
+  color: #f1fa8c;
+}
+
+.hljs-title,
+.hljs-section {
+  color: #50fa7b;
+}
+
+.hljs-comment {
+  color: #6272a4;
+  font-style: italic;
+}
+
+.hljs-variable,
+.hljs-template-variable {
+  color: #f8f8f2;
+}
+
+.hljs-type,
+.hljs-built_in,
+.hljs-bullet,
+.hljs-number,
+.hljs-addition {
+  color: #bd93f9;
+}
+
+.hljs-attr {
+  color: #8be9fd;
+}
+
+.hljs-params {
+  color: #ffb86c;
+}
+
+.blog-content a {
+  @apply text-blue-400 hover:underline underline-offset-4 decoration-2;
+}
+
+/* Light Mode Overrides for Blog */
+.light-mode-blog .blog-content h1,
+.light-mode-blog .blog-content h2,
+.light-mode-blog .blog-content h3 {
+  @apply text-black;
+}
+
+.light-mode-blog .blog-content p {
+  @apply text-black/80;
+}
+
+.light-mode-blog .blog-content .inline-code {
+  @apply bg-black/5 text-blue-600;
+}
+
+/* Code blocks now remain dark in both modes for consistency */
+
+.light-mode-blog .blog-content a {
+  @apply text-blue-600;
+}
+
+.light-mode-blog .blog-content li {
+  @apply text-black/80;
+}

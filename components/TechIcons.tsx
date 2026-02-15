@@ -133,7 +133,7 @@ export default function TechIcons({ scrollTarget }: { scrollTarget: RefObject<HT
                 className="w-8 h-8"
               />
               <div
-                  className="
+                className="
                     absolute
                     -top-8
                     left-1/2
@@ -150,9 +150,9 @@ export default function TechIcons({ scrollTarget }: { scrollTarget: RefObject<HT
                     group-hover:scale-100
                     pointer-events-none
                   "
-                >
-                  {getTechName(src)}
-                </div>
+              >
+                {getTechName(src)}
+              </div>
             </motion.div>
           );
         })}
@@ -164,7 +164,7 @@ export default function TechIcons({ scrollTarget }: { scrollTarget: RefObject<HT
 const getTechName = (path: string) => {
   const fileName = path.split("/").pop() || "";
   return fileName
-    .replace(/\.[^/.]+$/, "") 
-    .replace(/[-_()]/g, " ") 
+    .replace(/\.[^/.]+$/, "")
+    .replace(/[-_()]/g, " ")
     .trim();
 };

@@ -47,7 +47,7 @@ export default function DiagonalPattern({
           height="100%"
           fill={`url(#diagonal-stripes-${side})`}
         />
-        
+
         <line
           x1="0"
           y1="0"
