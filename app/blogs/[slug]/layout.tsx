@@ -27,7 +27,7 @@ export async function generateMetadata({
     description: post.description,
 
     openGraph: {
-      title: post.title,
+      title: `${post.title} | Aayush Tirmanwar`,
       description: post.description,
       url: url,
       siteName: "Aayush Tirmanwar",
