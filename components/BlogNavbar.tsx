@@ -17,7 +17,7 @@ interface BlogNavbarProps {
 export default function BlogNavbar({ isLightMode, setIsLightMode }: BlogNavbarProps) {
     return (
         <div className="sticky top-0 z-50 -mx-6 sm:-mx-12 px-6 sm:px-12 mb-8 pointer-events-none">
-            <div className={`absolute inset-0 backdrop-blur-md mask-[linear-gradient(to_bottom,black_80%,transparent)] ${isLightMode ? 'bg-[#fefefe]/80' : 'bg-[#0a0a0a]/80'}`} />
+            <div className={`absolute ${isLightMode ? 'bg-[#fefefe]/80' : 'bg-[#0a0a0a]/80'}`} />
             <motion.div
                 className="relative flex items-center justify-between py-6 pointer-events-auto"
             >
