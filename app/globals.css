@@ -111,6 +111,38 @@ body {
   scroll-margin-top: 15rem;
 }
 
+/* ... existing blog styles ... */
+
+/* View Transitions for Theme Toggle */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 9999;
+}
+
+.theme-transition-dark::view-transition-new(root),
+.theme-transition-light::view-transition-new(root) {
+  animation: circle-reveal 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes circle-reveal {
+  from {
+    clip-path: circle(0% at var(--x) var(--y));
+  }
+
+  to {
+    clip-path: circle(150% at var(--x) var(--y));
+  }
+}
+
 .blog-content h2 {
   @apply text-2xl sm:text-3xl font-bold mb-4 mt-10;
   scroll-margin-top: 15rem;

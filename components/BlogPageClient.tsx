@@ -5,6 +5,7 @@ import TableOfContents from './TableOfContents'
 import BlogThemeWrapper from './BlogThemeWrapper'
 import Image from 'next/image'
 import BlogNavbar from './BlogNavbar'
+import { performThemeTransition } from '@/lib/theme-utils'
 
 interface BlogPageClientProps {
     post: any
@@ -16,10 +17,14 @@ interface BlogPageClientProps {
 export default function BlogPageClient({ post, slug, headings, children }: BlogPageClientProps) {
     const [isLightMode, setIsLightMode] = useState(false)
 
+    const handleThemeToggle = (event: React.MouseEvent) => {
+        performThemeTransition(event, isLightMode, () => setIsLightMode(!isLightMode));
+    }
+
     return (
-        <div className={`transition-colors duration-500 min-h-screen ${isLightMode ? 'bg-[#fefefe] text-[#111]' : 'bg-[#0a0a0a] text-[#eee]'}`}>
+        <div className={`transition-colors duration-500 min-h-screen ${isLightMode ? 'bg-[#FDFBF7] text-[#111]' : 'bg-[#0a0a0a] text-[#eee]'}`}>
             <div className="max-w-full mx-auto px-6 sm:px-12">
-                <BlogNavbar isLightMode={isLightMode} setIsLightMode={setIsLightMode} />
+                <BlogNavbar isLightMode={isLightMode} setIsLightMode={handleThemeToggle as any} />
 
                 <div className="flex flex-col lg:flex-row gap-6">
                     {/* TOC Sidebar */}

@@ -14,8 +14,8 @@ const FADE_UP_VARIANTS = {
 
 export default function ProjectsPage() {
   return (
-    <div className=" min-h-screen">
-      <Container className="max-w-4xl">
+    <div>
+      <Container className="max-w-4xl min-h-screen">
         <div className="mx-auto font-hanken pb-20">
           {/* Back to Home Button */}
           <Link

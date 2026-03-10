@@ -5,14 +5,10 @@ import BlogCard from '@/components/BlogCard'
 
 interface BlogsListProps {
     blogs: any[]
+    isLightMode?: boolean
 }
 
-const FADE_UP_VARIANTS = {
-    hidden: { opacity: 0, y: 20, filter: "blur(4px)" },
-    show: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.5 } },
-};
-
-export default function BlogsList({ blogs }: BlogsListProps) {
+export default function BlogsList({ blogs, isLightMode = false }: BlogsListProps) {
     return (
         <div className="max-w-3xl mx-auto px-4">
             <motion.div
@@ -43,6 +39,7 @@ export default function BlogsList({ blogs }: BlogsListProps) {
                             date={blog.date}
                             slug={blog.slug}
                             coverImage={blog.coverImage}
+                            isLightMode={isLightMode}
                         />
                     </motion.div>
                 ))}

@@ -65,7 +65,7 @@ export default function BlogThemeWrapper({ children, title, date, slug, isLightM
     }
 
     return (
-        <main className={`min-h-screen transition-colors duration-500 ${isLightMode ? 'bg-[#fefefe] text-[#111] light-mode-blog' : 'bg-[#0a0a0a] text-[#eee]'}`}>
+        <main className={`min-h-screen transition-colors duration-500 ${isLightMode ? 'bg-[#FDFBF7] text-[#111] light-mode-blog' : 'bg-[#0a0a0a] text-[#eee]'}`}>
             <div className="max-w-4xl mx-auto">
                 <motion.div
                     initial="hidden"
