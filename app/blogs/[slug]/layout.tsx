@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getBlogBySlug } from "@/lib/mdx";
 import { notFound } from "next/navigation";
-
+import BlogNavbar from "@/components/BlogNavbar";
 type Props = {
   children: React.ReactNode;
   params: Promise<{ slug: string }>;
@@ -21,6 +21,7 @@ export async function generateMetadata({
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL; 
   const url = `${baseUrl}/blog/${slug}`;
   const imageUrl = `${baseUrl}${post.coverImage}`; 
+  console.log("The baseURl is " , baseUrl); 
 
   return {
     title: `${post.title} | Aayush Tirmanwar`,
@@ -51,5 +52,7 @@ export async function generateMetadata({
 }
 
 export default function BlogLayout({ children }: Props) {
-  return <>{children}</>;
+  return <>
+    {children} 
+  </>;
 }

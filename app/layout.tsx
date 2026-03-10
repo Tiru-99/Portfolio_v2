@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://aayushtirmanwar.in"),
 
   openGraph: {
-    title: "Aayush Tirmanwar | Backend Developer",
+    title: "Aayush Tirmanwar | Engineer",
     description:
       "Building scalable backend systems, real-time platforms, and AI-powered applications.",
     url: "https://aayushtirmanwar.in",

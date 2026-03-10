@@ -63,6 +63,11 @@ body {
     BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
+.font-geist {
+  font-family: var(--font-geist-sans), system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
 @keyframes gradient-move {
   0% {
     background-position: 0% 50%;
@@ -103,18 +108,21 @@ body {
 /* Blog Content Styles */
 .blog-content h1 {
   @apply text-4xl sm:text-5xl font-bold mb-8 mt-12;
+  scroll-margin-top: 15rem;
 }
 
 .blog-content h2 {
   @apply text-2xl sm:text-3xl font-bold mb-4 mt-10;
+  scroll-margin-top: 15rem;
 }
 
 .blog-content h3 {
   @apply text-xl sm:text-2xl font-bold mb-4 mt-8;
+  scroll-margin-top: 15rem;
 }
 
 .blog-content p {
-  @apply text-lg leading-relaxed mb-6 opacity-80;
+  @apply text-lg leading-relaxed mb-6;
 }
 
 .blog-content ul {
@@ -198,7 +206,7 @@ body {
 }
 
 .light-mode-blog .blog-content p {
-  @apply text-black/80;
+  @apply text-black/90;
 }
 
 .light-mode-blog .blog-content .inline-code {
