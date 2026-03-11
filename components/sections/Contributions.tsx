@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic';
 const GitHubCalendar = dynamic(() => import('react-github-calendar').then((mod) => mod.GitHubCalendar), { ssr: false });
 
 export default function Contributions() {
-  // Custom theme matching the reference image - dark green gradient
+  //custom theme 
   const customTheme = {
     light: [
       '#161b22', 
@@ -26,7 +26,6 @@ export default function Contributions() {
   return (
     <section className="flex justify-center items-center py-16 px-8 mt-10">
       <div className="w-full max-w-5xl">
-        {/* Header */}
         <div className="mb-6 text-center">
           <h2 className="text-2xl md:text-4xl font-instrument text-white">
             Contributions <span className="text-white/50">@Tiru-99</span>

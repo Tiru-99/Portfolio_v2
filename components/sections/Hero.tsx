@@ -31,10 +31,10 @@ export default function Hero() {
       animate="show"
       variants={STAGGER}
     >
-      {/* ── Banner ── */}
+      {/*Banner*/}
       <motion.div
         variants={FADE}
-        className="relative w-full h-[200px] sm:h-[240px] md:h-[280px] overflow-hidden rounded-xl"
+        className="relative w-full h-50 sm:h-60 md:h-70 overflow-hidden rounded-xl"
       >
         <Image
           src="/assets/banner23.gif"
@@ -48,8 +48,8 @@ export default function Hero() {
         <div className="absolute inset-0 bg-linear-to-t from-black via-black/20 to-transparent" />
         <div className="absolute inset-0 bg-linear-to-r from-black/20 via-transparent to-black/20" />
 
-        {/* Status Badge - Left Side */}
-        <div className="absolute top-4 left-4 z-20">
+        {/* Open to work */}
+        <div className="absolute top-4 left-4 z-20 hover:cursor-pointer">
           <motion.div
             variants={FADE}
             className="flex items-center gap-2 bg-black/40 backdrop-blur-md border border-white/10 rounded-full px-3 py-1.5"
@@ -61,7 +61,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Floating Socials - Right Side */}
+        {/* Socials*/}
         <div className="absolute top-4 right-4 z-20">
           <motion.div
             variants={FADE}
@@ -72,7 +72,7 @@ export default function Hero() {
         </div>
       </motion.div>
 
-      {/* ── Centered Identity Block ── */}
+
       <div className="relative flex flex-col items-center -mt-12 sm:-mt-16 px-4 w-full text-center">
         {/* Profile Picture */}
         <motion.div

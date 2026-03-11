@@ -13,7 +13,7 @@ export const metadata: Metadata = {
         siteName: "Aayush Tirmanwar Portfolio",
         images: [
             {
-                url: "https://aayushtirmanwar.in/assets/coffee.jpeg", // Using their profile/coffee image for OG
+                url: "https://aayushtirmanwar.in/assets/coffee.jpeg", 
                 width: 1200,
                 height: 630,
                 alt: "Aayush Tirmanwar Portfolio",
