@@ -63,7 +63,7 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
       images: [
         {
-          url: "/og.png",
+          url: "/og_v2.png",
           width: 1200,
           height: 630,
           alt: "Aayush Tirmanwar Portfolio",
@@ -77,7 +77,7 @@ export async function generateMetadata(): Promise<Metadata> {
       description:
         "Scalable backend systems, real-time architecture, and AI applications.",
       creator: "@tiru299",
-      images: ["/og.png"],
+      images: ["/og_v2.png"],
     },
 
     robots: {
