@@ -24,10 +24,13 @@ const instrumentSerif = Instrument_Serif({
 
 
 export const metadata: Metadata = {
-  title: "Aayush Tirmanwar | Engineer",
+  title: {
+    default: "Aayush Tirmanwar | Engineer",
+    template: "%s | Aayush Tirmanwar",
+  },
   description:
     "Portfolio of Aayush Tirmanwar — Backend Developer specializing in scalable systems, microservices, real-time architectures, and AI-driven applications using Node.js, TypeScript, PostgreSQL, Redis, Kafka, and AWS.",
-  
+
   keywords: [
     "Aayush Tirmanwar",
     "Backend Developer",
@@ -62,11 +65,19 @@ export const metadata: Metadata = {
     title: "Aayush Tirmanwar | Engineer | Backend Developer",
     description:
       "Scalable backend systems, real-time architecture, and AI applications.",
+    creator: "@tiru299",
   },
 
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 

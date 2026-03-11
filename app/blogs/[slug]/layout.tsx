@@ -11,20 +11,25 @@ export async function generateMetadata({
 }: Props): Promise<Metadata> {
   const { slug } = await params;
 
-  const post = getBlogBySlug(slug);
+  const post = getBlogBySlug(slug) as any;
 
   if (!post) {
     notFound();
   }
 
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-  const url = `${baseUrl}/blog/${slug}`;
-  const imageUrl = `${baseUrl}${post.coverImage}`;
-  console.log("The baseURl is ", baseUrl);
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://aayushtirmanwar.in';
+  const url = `${baseUrl}/blogs/${slug}`;
+  const imageUrl = post.coverImage.startsWith('http') ? post.coverImage : `${baseUrl}${post.coverImage}`;
 
   return {
     title: `${post.title} | Aayush Tirmanwar`,
     description: post.description,
+    keywords: post.tags || post.keywords || ["engineering", "backend", "software development"],
+    authors: [{ name: "Aayush Tirmanwar" }],
+
+    alternates: {
+      canonical: url,
+    },
 
     openGraph: {
       title: `${post.title} | Aayush Tirmanwar`,
@@ -36,9 +41,12 @@ export async function generateMetadata({
           url: imageUrl,
           width: 1200,
           height: 630,
+          alt: post.title,
         },
       ],
       type: "article",
+      publishedTime: post.date,
+      authors: ["Aayush Tirmanwar"],
     },
 
     twitter: {
@@ -46,6 +54,19 @@ export async function generateMetadata({
       title: post.title,
       description: post.description,
       images: [imageUrl],
+      creator: "@tiru299", 
+    },
+
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
     },
   };
 }
