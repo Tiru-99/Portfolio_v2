@@ -58,6 +58,14 @@ export const metadata: Metadata = {
     siteName: "Aayush Tirmanwar Portfolio",
     locale: "en_US",
     type: "website",
+    images: [
+        {
+          url: "https://aayushtirmanwar.in/og.png",
+          width: 1200,
+          height: 630,
+          alt: "Aayush Tirmanwar Portfolio",
+        },
+    ],
   },
 
   twitter: {
@@ -66,6 +74,7 @@ export const metadata: Metadata = {
     description:
       "Scalable backend systems, real-time architecture, and AI applications.",
     creator: "@tiru299",
+    images: ["https://aayushtirmanwar.in/og.png"],
   },
 
   robots: {
