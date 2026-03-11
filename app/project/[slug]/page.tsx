@@ -1,7 +1,7 @@
 "use client";
 
 import { notFound } from "next/navigation";
-import Container from "../../../components/Container";
+import Container from "@/components/ui/Container";
 import { projects, Project } from "../../../data/projects";
 import Image from "next/image";
 import { ArrowLeft, ExternalLink, Github, Home } from "lucide-react";

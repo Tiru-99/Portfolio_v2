@@ -1,14 +1,13 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import BlogCard from '@/components/BlogCard'
+import BlogCard from '@/components/blog/BlogCard'
 
 interface BlogsListProps {
     blogs: any[]
-    isLightMode?: boolean
 }
 
-export default function BlogsList({ blogs, isLightMode = false }: BlogsListProps) {
+export default function BlogsList({ blogs }: BlogsListProps) {
     return (
         <div className="max-w-3xl mx-auto px-4">
             <motion.div
@@ -39,7 +38,6 @@ export default function BlogsList({ blogs, isLightMode = false }: BlogsListProps
                             date={blog.date}
                             slug={blog.slug}
                             coverImage={blog.coverImage}
-                            isLightMode={isLightMode}
                         />
                     </motion.div>
                 ))}

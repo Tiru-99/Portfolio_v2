@@ -1,29 +1,29 @@
 "use client"
-import Hero from "@/components/Hero"
-import Container from "@/components/Container"
-import Experience from "@/components/Experience"
-import Projects from "@/components/Projects"
-import Contributions from "@/components/Contributions"
-import Stack from "@/components/Stack"
-import LetsTalk from "@/components/LetsTalk"
-import Footer from "@/components/Footer"
-import Navbar from "@/components/Navbar"
-import OnekoCat from "@/components/Onekocat"
+import Hero from "@/components/sections/Hero"
+import Container from "@/components/ui/Container"
+import Experience from "@/components/sections/Experience"
+import Projects from "@/components/projects/Projects"
+import Contributions from "@/components/sections/Contributions"
+import Stack from "@/components/sections/Stack"
+import LetsTalk from "@/components/sections/LetsTalk"
+import Footer from "@/components/sections/Footer"
+import Navbar from "@/components/ui/Navbar"
+import OnekoCat from "@/components/ui/Onekocat"
 
 
 export default function Home() {
-  
+
   return (
     <Container className="max-w-5xl">
-      <Navbar/>
-      <OnekoCat/>
+      <Navbar />
+      <OnekoCat />
       <Hero />
       <Experience />
       <Projects />
       <Stack />
       <Contributions />
-      <LetsTalk/>
-      <Footer/>
+      <LetsTalk />
+      <Footer />
     </Container>
   )
 }

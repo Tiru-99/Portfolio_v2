@@ -11,7 +11,6 @@ interface BlogCardProps {
     date: string
     slug: string
     coverImage?: string
-    isLightMode?: boolean
 }
 
 const CHILD_VARIANTS = {
@@ -19,7 +18,7 @@ const CHILD_VARIANTS = {
     show: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.5 } },
 };
 
-export default function BlogCard({ title, description, date, slug, coverImage, isLightMode = false }: BlogCardProps) {
+export default function BlogCard({ title, description, date, slug, coverImage }: BlogCardProps) {
     return (
         <motion.div
             initial="hidden"
@@ -33,16 +32,16 @@ export default function BlogCard({ title, description, date, slug, coverImage, i
                     },
                 },
             }}
-            className={`group relative max-w-sm h-full rounded-2xl border transition-all duration-500 hover:-translate-y-1 ${isLightMode ? 'bg-black/5 border-black/5 hover:border-black/10' : 'bg-white/5 border-white/5 hover:border-white/10'}`}
+            className={`group relative max-w-sm h-full rounded-2xl border transition-all duration-500 hover:-translate-y-1 ${ 'bg-white/5 border-white/5 hover:border-white/10'}`}
         >
             {/* cover image */}
-            <div className={`relative h-48 w-full overflow-hidden ${isLightMode ? 'bg-black/5' : 'bg-black/50'}`}>
+            <div className={`relative h-48 w-full overflow-hidden ${'bg-black/50'}`}>
                 {coverImage ? (
                     <Image
                         src={coverImage}
                         alt={title}
                         fill
-                        className={`object-cover transition-all duration-700 group-hover:scale-105 ${isLightMode ? 'opacity-90 group-hover:opacity-100' : 'opacity-80 group-hover:opacity-100 grayscale group-hover:grayscale-0'}`}
+                        className={`object-cover transition-all duration-700 group-hover:scale-105 ${'opacity-80 group-hover:opacity-100 grayscale group-hover:grayscale-0'}`}
                     />
                 ) : (
                     <div className="w-full h-full bg-linear-to-br from-blue-500/20 to-purple-500/20" />
@@ -52,12 +51,12 @@ export default function BlogCard({ title, description, date, slug, coverImage, i
             {/* content */}
             <div className="p-6 relative">
                 <motion.div variants={CHILD_VARIANTS} className="flex items-center gap-2 mb-2">
-                    <span className={`text-[10px] uppercase tracking-widest font-medium font-mono ${isLightMode ? 'text-black/40' : 'text-white/30'}`}>
+                    <span className={`text-[10px] uppercase tracking-widest font-medium font-mono ${'text-white/30'}`}>
                         {date}
                     </span>
                 </motion.div>
 
-                <motion.h3 variants={CHILD_VARIANTS} className={`text-2xl font-instrument mb-2 truncate ${isLightMode ? 'text-black' : 'text-white/90'}`}>
+                <motion.h3 variants={CHILD_VARIANTS} className={`text-2xl font-instrument mb-2 truncate ${'text-white/90'}`}>
                     {title}
                 </motion.h3>
 
@@ -66,7 +65,7 @@ export default function BlogCard({ title, description, date, slug, coverImage, i
                         hidden: { opacity: 0, y: 10, filter: "blur(8px)" },
                         show: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.6 } },
                     }}
-                    className={`text-sm font-hanken leading-relaxed mb-6 line-clamp-2 ${isLightMode ? 'text-black/60' : 'text-white/40'}`}
+                    className={`text-sm font-hanken leading-relaxed mb-6 line-clamp-2 ${ 'text-white/40'}`}
                 >
                     {description}
                 </motion.p>
@@ -75,7 +74,7 @@ export default function BlogCard({ title, description, date, slug, coverImage, i
                 <motion.div variants={CHILD_VARIANTS} className="flex items-center justify-between mt-4">
                     <Link
                         href={`/blogs/${slug}`}
-                        className={`inline-flex items-center gap-2 text-xs font-medium transition-colors group/link ${isLightMode ? 'text-black/50 hover:text-black' : 'text-white/50 hover:text-white'}`}
+                        className={`inline-flex items-center gap-2 text-xs font-medium transition-colors group/link ${'text-white/50 hover:text-white'}`}
                     >
                         Read Full Post
                         <ArrowRight
@@ -84,7 +83,7 @@ export default function BlogCard({ title, description, date, slug, coverImage, i
                         />
                     </Link>
 
-                    <div className={`px-2.5 py-1 rounded-full text-[10px] font-medium uppercase tracking-wider backdrop-blur-md border ${isLightMode ? 'border-black/10 bg-black/5 text-black/60' : 'border-white/5 bg-white/5 text-white/40'}`}>
+                    <div className={`px-2.5 py-1 rounded-full text-[10px] font-medium uppercase tracking-wider backdrop-blur-md border ${'border-white/5 bg-white/5 text-white/40'}`}>
                         Article
                     </div>
                 </motion.div>

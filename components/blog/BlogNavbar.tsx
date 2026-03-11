@@ -12,15 +12,11 @@ const FADE_UP = {
 interface BlogNavbarProps {
     isLightMode: boolean
     setIsLightMode?: (event: React.MouseEvent) => void
-    showThemeToggle?: boolean
-    showBlogsLink?: boolean
 }
 
 export default function BlogNavbar({
     isLightMode,
     setIsLightMode,
-    showThemeToggle = true,
-    showBlogsLink = true
 }: BlogNavbarProps) {
     return (
         <div className="sticky top-0 z-50 -mx-6 sm:-mx-12 px-6 sm:px-12 mb-8 pointer-events-none">
@@ -38,20 +34,18 @@ export default function BlogNavbar({
                             Home
                         </span>
                     </Link>
-                    {showBlogsLink && (
-                        <Link
-                            href="/blogs"
-                            className={`group flex items-center gap-0 hover:gap-2 border px-3 py-2 rounded-full transition-all duration-700 ease-in-out overflow-hidden ${isLightMode ? 'bg-black/5 border-black/10' : 'bg-white/5 border-white/10'}`}
-                        >
-                            <ArrowLeft size={18} className={`${isLightMode ? 'text-black/70 group-hover:text-black' : 'text-white/70 group-hover:text-white'}`} />
-                            <span className={`max-w-0 group-hover:max-w-xs overflow-hidden whitespace-nowrap text-sm uppercase tracking-wider font-medium transition-all duration-700 ease-in-out ${isLightMode ? 'text-black/70 group-hover:text-black' : 'text-white/70 group-hover:text-white'}`}>
-                                Blogs
-                            </span>
-                        </Link>
-                    )}
+                    <Link
+                        href="/blogs"
+                        className={`group flex items-center gap-0 hover:gap-2 border px-3 py-2 rounded-full transition-all duration-700 ease-in-out overflow-hidden ${isLightMode ? 'bg-black/5 border-black/10' : 'bg-white/5 border-white/10'}`}
+                    >
+                        <ArrowLeft size={18} className={`${isLightMode ? 'text-black/70 group-hover:text-black' : 'text-white/70 group-hover:text-white'}`} />
+                        <span className={`max-w-0 group-hover:max-w-xs overflow-hidden whitespace-nowrap text-sm uppercase tracking-wider font-medium transition-all duration-700 ease-in-out ${isLightMode ? 'text-black/70 group-hover:text-black' : 'text-white/70 group-hover:text-white'}`}>
+                            Blogs
+                        </span>
+                    </Link>
                 </div>
 
-                {showThemeToggle && setIsLightMode && (
+                {setIsLightMode && (
                     <button
                         onClick={(e) => setIsLightMode(e)}
                         className={`p-3 rounded-full hover:cursor-pointer transition-colors ${isLightMode ? 'bg-black/5 hover:bg-black/10 text-black' : 'bg-white/5 hover:bg-white/10 text-white'}`}

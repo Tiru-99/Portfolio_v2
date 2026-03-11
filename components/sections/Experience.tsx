@@ -1,5 +1,5 @@
 import { MapPin, Briefcase } from "lucide-react";
-import TechTag from "./TechBadge";
+import TechTag from "../ui/TechBadge";
 import { motion } from "framer-motion";
 
 export default function Experience() {
@@ -70,25 +70,25 @@ export default function Experience() {
           {/* Description */}
           <ul className="mt-4 space-y-1 text-sm text-white/50 list-disc font-hanken">
             <li>
-              Implemented <span className="text-white">Redis-based caching strategies</span>, achieving 
-              <span className="text-white"> 50% faster API response times</span> and significantly reducing 
+              Implemented <span className="text-white">Redis-based caching strategies</span>, achieving
+              <span className="text-white"> 50% faster API response times</span> and significantly reducing
               <span className="text-white"> database I/O bottlenecks</span>.
             </li>
-          
+
             <li>
-              Architected <span className="text-white">critical backend workflows</span> for a LinkedIn-style broker platform using 
-              <span className="text-white"> Node.js, TypeScript, and PostgreSQL</span>, with strong emphasis on 
+              Architected <span className="text-white">critical backend workflows</span> for a LinkedIn-style broker platform using
+              <span className="text-white"> Node.js, TypeScript, and PostgreSQL</span>, with strong emphasis on
               <span className="text-white"> performance, modularity, and scalability</span>.
             </li>
-          
+
             <li>
-              Spearheaded the <span className="text-white">end-to-end architecture and deployment</span> of a 
-              <span className="text-white">production-ready car dealership platform</span>, owning 
+              Spearheaded the <span className="text-white">end-to-end architecture and deployment</span> of a
+              <span className="text-white">production-ready car dealership platform</span>, owning
               <span className="text-white">data logic, schema design, and API orchestration</span> using a BaaS-driven approach.
             </li>
-          
+
             <li>
-              Shipped multiple <span className="text-white">high-performance UI platforms</span> with clean UI/UX, 
+              Shipped multiple <span className="text-white">high-performance UI platforms</span> with clean UI/UX,
               serving <span className="text-white">200+ daily active visitors</span> in production.
             </li>
           </ul>

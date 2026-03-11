@@ -1,9 +1,9 @@
 import { getBlogBySlug } from '@/lib/mdx';
-import { mdxComponents } from '@/components/Mdx-components';
+import { mdxComponents } from '@/components/blog/Mdx-components';
 import { notFound } from 'next/navigation'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import rehypeHighlight from 'rehype-highlight'
-import BlogPageClient from '@/components/BlogPageClient'
+import BlogPageClient from '@/components/blog/BlogPageClient'
 import { getHeadings } from '@/lib/getHeadings'
 
 interface PageProps {

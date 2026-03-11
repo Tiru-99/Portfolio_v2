@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Play, ArrowLeft } from "lucide-react";
-import Container from "@/components/Container";
-import Footer from "@/components/Footer";
+import Container from "@/components/ui/Container";
+import Footer from "@/components/sections/Footer";
 
 const FADE_UP = {
   hidden: { opacity: 0, y: 20 },

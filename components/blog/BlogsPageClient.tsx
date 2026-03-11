@@ -1,8 +1,9 @@
 'use client'
 
-import BlogsList from '@/components/BlogsList'
-import Container from '@/components/Container'
-import BlogNavbar from '@/components/BlogNavbar'
+import BlogsList from '@/components/blog/BlogsList'
+import Container from '@/components/ui/Container'
+import Link from 'next/link'
+import { ArrowLeft } from 'lucide-react'
 
 interface BlogsPageClientProps {
     blogs: any[]
@@ -15,14 +16,16 @@ export default function BlogsPageClient({ blogs }: BlogsPageClientProps) {
     return (
         <div className="bg-[#0a0a0a] text-[#eee] min-h-screen">
             <Container className="max-w-4xl min-h-screen">
-                <div className="mx-auto font-hanken pb-20 px-6 sm:px-12">
-                    <BlogNavbar
-                        isLightMode={isLightMode}
-                        showThemeToggle={false}
-                        showBlogsLink={false}
-                    />
+                <div className="mx-auto font-hanken pb-20 px-6 sm:px-2">
+                    <Link
+                        href="/"
+                        className="flex items-center gap-2 m-4 text-sm text-white/50 hover:text-white transition-colors mb-8 group px-4"
+                    >
+                        <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
+                        Back to Home
+                    </Link>
 
-                    <div className="text-center mb-16 pt-12">
+                    <div className="text-center mb-16">
                         <p className="text-xs font-hanken mb-2 tracking-[0.2em] text-white/50">WRITING</p>
                         <h1 className="text-center text-5xl font-instrument mb-4 italic text-white">Thoughts & Journals</h1>
                         <p className="text-sm font-hanken max-w-lg mx-auto text-white/40">
@@ -35,7 +38,7 @@ export default function BlogsPageClient({ blogs }: BlogsPageClientProps) {
                         </div>
                     </div>
 
-                    <BlogsList blogs={blogs} isLightMode={isLightMode} />
+                    <BlogsList blogs={blogs} />
                 </div>
             </Container>
         </div>

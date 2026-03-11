@@ -1,8 +1,8 @@
 "use client";
 
-import Container from "../../components/Container";
-import { ShootingStars } from "../../components/ShootingStars";
-import { StarField } from "../../components/StarField";
+import Container from "@/components/ui/Container";
+import { ShootingStars } from "@/components/ui/ShootingStars";
+import { StarField } from "@/components/ui/StarField";
 import { motion } from "framer-motion";
 import { SiGithub, SiLinkedin, SiX } from "react-icons/si";
 import { MdOutlineEmail } from "react-icons/md";

@@ -1,6 +1,6 @@
 "use client"
-import Container from "../../components/Container";
-import ProjectCard from "../../components/ProjectCard";
+import Container from "../../components/ui/Container";
+import ProjectCard from "../../components/projects/ProjectCard";
 import { projects, Project } from "../../data/projects";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";

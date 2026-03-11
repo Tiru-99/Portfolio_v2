@@ -5,6 +5,7 @@ import { TbFileCv } from "react-icons/tb";
 import { BiPaperPlane } from "react-icons/bi";
 import { motion, Variants } from "framer-motion";
 import Link from "next/link";
+import MetalPlate from "../ui/MetalPlate";
 
 const FADE: Variants = {
   hidden: { opacity: 0, y: 16, filter: "blur(6px)" },
@@ -19,7 +20,7 @@ const STAGGER = {
   show: { transition: { staggerChildren: 0.09 } },
 };
 
-const SKILLS = ["TypeScript", "NextJS" , "PostgreSQL", "Redis", "Kafka" , "Docker", "Next.js", "Distributed Systems"];
+const SKILLS = ["TypeScript", "NextJS", "PostgreSQL", "Redis", "Kafka", "Docker", "Next.js", "Distributed Systems"];
 
 export default function Hero() {
   return (
@@ -104,45 +105,54 @@ export default function Hero() {
           </motion.p>
         </div>
 
-        {/* Stats Section - High Contrast Technical Style */}
+        {/* Stats Section - Single Metal Plate Style */}
         <motion.div
           variants={FADE}
-          className=" flex flex-wrap items-center justify-center gap-8 px-8 py-5"
+          className="mt-5 px-4 w-full flex justify-center"
         >
-          <div className="flex flex-col items-center gap-1">
-            <div className="text-4xl sm:text-5xl font-bold font-mono tracking-tighter text-white tabular-nums">
-              5<span className="text-white/30 font-light">+</span>
-            </div>
-            <div className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/30">
-              Products Shipped
-            </div>
-          </div>
+          <MetalPlate className="w-full max-w-3xl">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12 py-3">
+              {/* Products Shipped */}
+              <div className="flex flex-col items-center gap-1">
+                <div className="text-4xl sm:text-5xl font-bold font-mono tracking-tighter text-white tabular-nums">
+                  5<span className="text-white/30 font-light">+</span>
+                </div>
+                <div className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/30 whitespace-nowrap">
+                  Products Shipped
+                </div>
+              </div>
 
-          <div className="w-px h-12 bg-white/10 hidden sm:block" />
+              {/* Separator */}
+              <div className="hidden sm:block w-px h-10 bg-white/10" />
 
-          <div className="flex flex-col items-center gap-1">
-            <div className="text-4xl sm:text-5xl font-bold font-mono tracking-tighter text-white tabular-nums">
-              1<span className="text-white/30 font-light">+</span>
-            </div>
-            <div className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/30">
-              Years Exp.
-            </div>
-          </div>
+              {/* Years Exp */}
+              <div className="flex flex-col items-center gap-1">
+                <div className="text-4xl sm:text-5xl font-bold font-mono tracking-tighter text-white tabular-nums">
+                  1<span className="text-white/30 font-light">+</span>
+                </div>
+                <div className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/30 whitespace-nowrap">
+                  Years Exp.
+                </div>
+              </div>
 
-          <div className="w-px h-12 bg-white/10 hidden sm:block" />
+              {/* Separator */}
+              <div className="hidden sm:block w-px h-10 bg-white/10" />
 
-          <div className="flex flex-col items-center gap-1">
-            <div className="text-xl sm:text-2xl font-bold font-mono tracking-tighter text-white uppercase flex items-center gap-1.5 h-12 sm:h-15">
-              <span>PRODUCT</span>
-              <span className="text-white/20">•</span>
-              <span>BACKEND</span>
-              <span className="text-white/20">•</span>
-              <span>INFRA</span>
+              {/* Focus Areas */}
+              <div className="flex flex-col items-center gap-1 w-full sm:w-auto">
+                <div className="text-xl sm:text-2xl font-bold font-mono tracking-tighter text-white uppercase flex items-center gap-1.5 h-auto py-2">
+                  <span>PRODUCT</span>
+                  <span className="text-white/20">•</span>
+                  <span>BACKEND</span>
+                  <span className="text-white/20">•</span>
+                  <span>INFRA</span>
+                </div>
+                <div className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/30">
+                  Focus Areas
+                </div>
+              </div>
             </div>
-            <div className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/30">
-              Focus Areas
-            </div>
-          </div>
+          </MetalPlate>
         </motion.div>
 
         {/* Bio Centered */}
@@ -164,7 +174,7 @@ export default function Hero() {
         {/* Action Buttons Centered */}
         <motion.div
           variants={FADE}
-          className="flex flex-wrap items-center justify-center gap-3 mt-8 font-hanken"
+          className="flex flex-wrap items-center justify-center gap-3 mt-4 font-hanken"
         >
           <Link
             href="/contact"

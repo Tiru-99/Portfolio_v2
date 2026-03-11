@@ -2,8 +2,8 @@
 
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import { ShootingStars } from "@/components/ShootingStars";
-import { StarField } from "@/components/StarField"
+import { ShootingStars } from "@/components/ui/ShootingStars";
+import { StarField } from "@/components/ui/StarField"
 import BookCall from "./Booking";
 import { motion } from "framer-motion";
 
@@ -37,7 +37,7 @@ export default function LetsTalk() {
                 </h2>
 
                 <div className="flex justify-center">
-                        <BookCall />
+                    <BookCall />
                 </div>
             </motion.div>
 

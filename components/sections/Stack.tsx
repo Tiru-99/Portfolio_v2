@@ -1,6 +1,6 @@
 import { useRef } from "react";
-import TechIcons from "./TechIcons";
-import FlowerSection from "./RotatingFlower";
+import TechIcons from "../ui/TechIcons";
+import FlowerSection from "../ui/RotatingFlower";
 
 export default function Stack() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
