@@ -23,73 +23,76 @@ const instrumentSerif = Instrument_Serif({
 });
 
 
-export const metadata: Metadata = {
-  title: {
-    default: "Aayush Tirmanwar | Engineer",
-    template: "%s | Aayush Tirmanwar",
-  },
-  description:
-    "Portfolio of Aayush Tirmanwar — Backend Developer specializing in scalable systems, microservices, real-time architectures, and AI-driven applications using Node.js, TypeScript, PostgreSQL, Redis, Kafka, and AWS.",
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: {
+      default: "Aayush Tirmanwar | Engineer",
+      template: "%s | Aayush Tirmanwar",
+    },
 
-  keywords: [
-    "Aayush Tirmanwar",
-    "Backend Developer",
-    "Full Stack Developer",
-    "Node.js Developer",
-    "TypeScript Developer",
-    "Microservices Architecture",
-    "Real-time Systems",
-    "PostgreSQL",
-    "Redis",
-    "Kafka",
-    "AWS Developer",
-    "Software Engineer Portfolio"
-  ],
-
-  authors: [{ name: "Aayush Tirmanwar" }],
-  creator: "Aayush Tirmanwar",
-  metadataBase: new URL("https://aayushtirmanwar.in"),
-
-  openGraph: {
-    title: "Aayush Tirmanwar | Engineer",
     description:
-      "Building scalable backend systems, real-time platforms, and AI-powered applications.",
-    url: "https://aayushtirmanwar.in",
-    siteName: "Aayush Tirmanwar Portfolio",
-    locale: "en_US",
-    type: "website",
-    images: [
+      "Portfolio of Aayush Tirmanwar — Backend Developer specializing in scalable systems, microservices, real-time architectures, and AI-driven applications using Node.js, TypeScript, PostgreSQL, Redis, Kafka, and AWS.",
+
+    keywords: [
+      "Aayush Tirmanwar",
+      "Backend Developer",
+      "Full Stack Developer",
+      "Node.js Developer",
+      "TypeScript Developer",
+      "Microservices Architecture",
+      "Real-time Systems",
+      "PostgreSQL",
+      "Redis",
+      "Kafka",
+      "AWS Developer",
+      "Software Engineer Portfolio",
+    ],
+
+    authors: [{ name: "Aayush Tirmanwar" }],
+    creator: "Aayush Tirmanwar",
+
+    metadataBase: new URL("https://aayushtirmanwar.in"),
+
+    openGraph: {
+      title: "Aayush Tirmanwar | Engineer",
+      description:
+        "Building scalable backend systems, real-time platforms, and AI-powered applications.",
+      url: "https://aayushtirmanwar.in",
+      siteName: "Aayush Tirmanwar Portfolio",
+      locale: "en_US",
+      type: "website",
+      images: [
         {
-          url: "https://aayushtirmanwar.in/og.png",
+          url: "/og.png",
           width: 1200,
           height: 630,
           alt: "Aayush Tirmanwar Portfolio",
         },
-    ],
-  },
+      ],
+    },
 
-  twitter: {
-    card: "summary_large_image",
-    title: "Aayush Tirmanwar | Engineer | Backend Developer",
-    description:
-      "Scalable backend systems, real-time architecture, and AI applications.",
-    creator: "@tiru299",
-    images: ["https://aayushtirmanwar.in/og.png"],
-  },
+    twitter: {
+      card: "summary_large_image",
+      title: "Aayush Tirmanwar | Engineer | Backend Developer",
+      description:
+        "Scalable backend systems, real-time architecture, and AI applications.",
+      creator: "@tiru299",
+      images: ["/og.png"],
+    },
 
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
+    robots: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
     },
-  },
-};
-
+  };
+}
 
 import SmoothScroll from "@/components/ui/SmoothScroll";
 

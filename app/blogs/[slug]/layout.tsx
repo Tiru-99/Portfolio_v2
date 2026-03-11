@@ -3,13 +3,13 @@ import { getBlogBySlug } from "@/lib/mdx";
 import { notFound } from "next/navigation";
 type Props = {
   children: React.ReactNode;
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 };
 
 export async function generateMetadata({
   params,
 }: Props): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug } = params;
 
   const post = getBlogBySlug(slug) as any;
 
