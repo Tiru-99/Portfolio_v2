@@ -20,7 +20,7 @@ const STAGGER = {
   show: { transition: { staggerChildren: 0.09 } },
 };
 
-const SKILLS = ["TypeScript", "NextJS", "PostgreSQL", "Redis", "Kafka", "Docker", "Next.js", "Distributed Systems"];
+const SKILLS = ["TypeScript", "NextJS", "PostgreSQL", "Redis", "Kafka", "Docker", "Distributed Systems"];
 
 export default function Hero() {
   return (
