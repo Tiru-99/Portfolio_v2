@@ -62,9 +62,9 @@ export default function Hero() {
             priority
           />
           
-          {/* Soft elegant gradient overlay */}
-          <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-black via-black/20 to-transparent" />
-          <div className="absolute inset-0 bg-linear-to-r from-black/20 via-transparent to-black/20" />
+          {/* Soft elegant gradient overlay - Reduced for better visibility */}
+          <div className="absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-black/60 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-r from-black/10 via-transparent to-black/10" />
 
           {/* Viewfinder Corners (Metallic HUD feel) */}
           <div className="absolute top-3 left-3 w-4 h-4 border-t-2 border-l-2 border-white/20 rounded-tl-sm pointer-events-none" />
@@ -93,6 +93,38 @@ export default function Hero() {
               <Socials />
             </motion.div>
           </div>
+
+          <motion.div
+            variants={FADE}
+            className="absolute bottom-4 left-10 z-20 hidden md:block pointer-events-none"
+          >
+            <div className="flex flex-col gap-1">
+              <span className="text-[8px] font-mono text-white/30 tracking-[0.4em] uppercase leading-none overflow-visible w-max ml-1">// BHAGVADGITA_2.47</span>
+              <div className="flex items-stretch gap-2.5">
+                <div className="w-1 border-l border-y border-white/20 rounded-sm" />
+                <p className="font-mono text-[9.5px] text-white/50 tracking-[0.2em] uppercase drop-shadow-[0_0_8px_rgba(255,255,255,0.4)] leading-tight py-0.5 text-left">
+                  Obsession with <br /> outcomes is weakness
+                </p>
+                <div className="w-1 border-r border-y border-white/20 rounded-sm" />
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            variants={FADE}
+            className="absolute bottom-4 right-10 z-20 hidden md:block pointer-events-none text-right"
+          >
+            <div className="flex flex-col items-end gap-1">
+              <span className="text-[8px] font-mono text-white/30 tracking-[0.4em] uppercase leading-none overflow-visible w-max mr-2">// SYS_LOG</span>
+              <div className="flex items-stretch gap-2.5">
+                <div className="w-1.5 border-l border-y border-white/20 rounded-sm" />
+                <p className="font-mono text-[9.5px] text-white/50 tracking-[0.2em] uppercase drop-shadow-[0_0_8px_rgba(255,255,255,0.4)] leading-tight py-0.5 text-right whitespace-nowrap">
+                  You have a right to action <br />, never to its fruit
+                </p>
+                <div className="w-1.5 border-r border-y border-white/20 rounded-sm" />
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
       </motion.div>
 
