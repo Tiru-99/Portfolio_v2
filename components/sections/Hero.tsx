@@ -31,45 +31,69 @@ export default function Hero() {
       animate="show"
       variants={STAGGER}
     >
-      {/*Banner*/}
+      {/*Banner Container*/}
       <motion.div
-        variants={FADE}
-        className="relative w-full h-50 sm:h-60 md:h-70 overflow-hidden rounded-xl"
+        className="relative w-full h-50 sm:h-60 md:h-72 group"
+        style={{ perspective: 1000 }}
       >
-        <Image
-          src="/assets/banner23.gif"
-          alt="Banner"
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, 1200px"
-          priority
-        />
-        {/* Soft elegant gradient overlay */}
-        <div className="absolute inset-0 bg-linear-to-t from-black via-black/20 to-transparent" />
-        <div className="absolute inset-0 bg-linear-to-r from-black/20 via-transparent to-black/20" />
-
-        {/* Open to work */}
-        <div className="absolute top-4 left-4 z-20 hover:cursor-pointer">
-          <motion.div
-            variants={FADE}
-            className="flex items-center gap-2 bg-black/40 backdrop-blur-md border border-white/10 rounded-full px-3 py-1.5"
-          >
-            <span className="w-2 h-2 rounded-full bg-green-400 shadow-[0_0_8px_rgba(74,222,128,0.8)] animate-pulse" />
-            <span className="text-[10px] font-mono text-white/60 tracking-widest uppercase">
-              Open to work
-            </span>
-          </motion.div>
+        {/* Ambient Glow Backdrop */}
+        <div className="absolute inset-0 z-0 opacity-40 blur-3xl">
+           <Image
+            src="/assets/Focus.jpg"
+            alt=""
+            fill
+            className="object-cover scale-110"
+            aria-hidden="true"
+          />
         </div>
 
-        {/* Socials*/}
-        <div className="absolute top-4 right-4 z-20">
-          <motion.div
-            variants={FADE}
-            className="bg-black/40 backdrop-blur-md border border-white/10 rounded-2xl px-4 py-2"
-          >
-            <Socials />
-          </motion.div>
-        </div>
+        {/* Main Banner Card */}
+        <motion.div
+          variants={FADE}
+          transition={{ type: "spring", stiffness: 400, damping: 30 }}
+          className="relative w-full h-full overflow-hidden rounded-xl border border-white/10 z-10 bg-black/40 backdrop-blur-sm"
+        >
+          <Image
+            src="/assets/Focus.jpg"
+            alt="Banner"
+            fill
+            className="object-contain"
+            sizes="(max-width: 768px) 100vw, 1200px"
+            priority
+          />
+          
+          {/* Soft elegant gradient overlay */}
+          <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-black via-black/20 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-r from-black/20 via-transparent to-black/20" />
+
+          {/* Viewfinder Corners (Metallic HUD feel) */}
+          <div className="absolute top-3 left-3 w-4 h-4 border-t-2 border-l-2 border-white/20 rounded-tl-sm pointer-events-none" />
+          <div className="absolute top-3 right-3 w-4 h-4 border-t-2 border-r-2 border-white/20 rounded-tr-sm pointer-events-none" />
+          <div className="absolute bottom-3 left-3 w-4 h-4 border-b-2 border-l-2 border-white/20 rounded-bl-sm pointer-events-none" />
+          <div className="absolute bottom-3 right-3 w-4 h-4 border-b-2 border-r-2 border-white/20 rounded-br-sm pointer-events-none" />
+
+          {/* User Info Overlays */}
+          <div className="absolute top-4 left-4 z-20 hover:cursor-pointer">
+            <motion.div
+              variants={FADE}
+              className="flex items-center gap-2 bg-black/40 backdrop-blur-md border border-white/10 rounded-full px-3 py-1.5"
+            >
+              <span className="w-2 h-2 rounded-full bg-green-400 shadow-[0_0_8px_rgba(74,222,128,0.8)] animate-pulse" />
+              <span className="text-[10px] font-mono text-white/60 tracking-widest uppercase">
+                Open to work
+              </span>
+            </motion.div>
+          </div>
+
+          <div className="absolute top-4 right-4 z-20">
+            <motion.div
+              variants={FADE}
+              className="bg-black/40 backdrop-blur-md border border-white/10 rounded-2xl px-4 py-2"
+            >
+              <Socials />
+            </motion.div>
+          </div>
+        </motion.div>
       </motion.div>
 
 
