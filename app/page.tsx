@@ -1,6 +1,5 @@
 "use client"
 import Hero from "@/components/sections/Hero"
-import QuoteSection from "@/components/sections/QuoteSection"
 import Container from "@/components/ui/Container"
 import Experience from "@/components/sections/Experience"
 import Projects from "@/components/projects/Projects"
@@ -23,7 +22,6 @@ export default function Home() {
       <Projects />
       <Stack />
       <Contributions />
-      <QuoteSection />
       <LetsTalk />
       <Footer />
     </Container>
